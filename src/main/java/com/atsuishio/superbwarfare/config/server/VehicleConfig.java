@@ -101,6 +101,89 @@ public class VehicleConfig {
     public static ForgeConfigSpec.IntValue YX_100_SWARM_EXPLOSION_DAMAGE;
     public static ForgeConfigSpec.DoubleValue YX_100_SWARM_EXPLOSION_RADIUS;
 
+    public static ForgeConfigSpec.IntValue M4A3E8_HP;
+    public static ForgeConfigSpec.IntValue M4A3E8_SHOOT_COST;
+    public static ForgeConfigSpec.IntValue M4A3E8_ENERGY_COST;
+    public static ForgeConfigSpec.IntValue M4A3E8_MAX_ENERGY;
+    public static ForgeConfigSpec.IntValue M4A3E8_AP_CANNON_DAMAGE;
+    public static ForgeConfigSpec.IntValue M4A3E8_AP_CANNON_EXPLOSION_DAMAGE;
+    public static ForgeConfigSpec.DoubleValue M4A3E8_AP_CANNON_EXPLOSION_RADIUS;
+    public static ForgeConfigSpec.IntValue M4A3E8_HE_CANNON_DAMAGE;
+    public static ForgeConfigSpec.IntValue M4A3E8_HE_CANNON_EXPLOSION_DAMAGE;
+    public static ForgeConfigSpec.DoubleValue M4A3E8_HE_CANNON_EXPLOSION_RADIUS;
+
+    public static ForgeConfigSpec.IntValue M46_HP;
+    public static ForgeConfigSpec.IntValue M46_SHOOT_COST;
+    public static ForgeConfigSpec.IntValue M46_ENERGY_COST;
+    public static ForgeConfigSpec.IntValue M46_MAX_ENERGY;
+    public static ForgeConfigSpec.IntValue M46_AP_CANNON_DAMAGE;
+    public static ForgeConfigSpec.IntValue M46_AP_CANNON_EXPLOSION_DAMAGE;
+    public static ForgeConfigSpec.DoubleValue M46_AP_CANNON_EXPLOSION_RADIUS;
+    public static ForgeConfigSpec.IntValue M46_HE_CANNON_DAMAGE;
+    public static ForgeConfigSpec.IntValue M46_HE_CANNON_EXPLOSION_DAMAGE;
+    public static ForgeConfigSpec.DoubleValue M46_HE_CANNON_EXPLOSION_RADIUS;
+
+    public static ForgeConfigSpec.IntValue M47_HP;
+    public static ForgeConfigSpec.IntValue M47_SHOOT_COST;
+    public static ForgeConfigSpec.IntValue M47_ENERGY_COST;
+    public static ForgeConfigSpec.IntValue M47_MAX_ENERGY;
+    public static ForgeConfigSpec.IntValue M47_AP_CANNON_DAMAGE;
+    public static ForgeConfigSpec.IntValue M47_AP_CANNON_EXPLOSION_DAMAGE;
+    public static ForgeConfigSpec.DoubleValue M47_AP_CANNON_EXPLOSION_RADIUS;
+    public static ForgeConfigSpec.IntValue M47_HE_CANNON_DAMAGE;
+    public static ForgeConfigSpec.IntValue M47_HE_CANNON_EXPLOSION_DAMAGE;
+    public static ForgeConfigSpec.DoubleValue M47_HE_CANNON_EXPLOSION_RADIUS;
+
+    public static ForgeConfigSpec.IntValue M48_HP;
+    public static ForgeConfigSpec.IntValue M48_SHOOT_COST;
+    public static ForgeConfigSpec.IntValue M48_ENERGY_COST;
+    public static ForgeConfigSpec.IntValue M48_MAX_ENERGY;
+    public static ForgeConfigSpec.IntValue M48_AP_CANNON_DAMAGE;
+    public static ForgeConfigSpec.IntValue M48_AP_CANNON_EXPLOSION_DAMAGE;
+    public static ForgeConfigSpec.DoubleValue M48_AP_CANNON_EXPLOSION_RADIUS;
+    public static ForgeConfigSpec.IntValue M48_HE_CANNON_DAMAGE;
+    public static ForgeConfigSpec.IntValue M48_HE_CANNON_EXPLOSION_DAMAGE;
+    public static ForgeConfigSpec.DoubleValue M48_HE_CANNON_EXPLOSION_RADIUS;
+
+    public static ForgeConfigSpec.IntValue M60A1_HP;
+    public static ForgeConfigSpec.IntValue M60A1_SHOOT_COST;
+    public static ForgeConfigSpec.IntValue M60A1_ENERGY_COST;
+    public static ForgeConfigSpec.IntValue M60A1_MAX_ENERGY;
+    public static ForgeConfigSpec.IntValue M60A1_AP_CANNON_DAMAGE;
+    public static ForgeConfigSpec.IntValue M60A1_AP_CANNON_EXPLOSION_DAMAGE;
+    public static ForgeConfigSpec.DoubleValue M60A1_AP_CANNON_EXPLOSION_RADIUS;
+    public static ForgeConfigSpec.IntValue M60A1_HE_CANNON_DAMAGE;
+    public static ForgeConfigSpec.IntValue M60A1_HE_CANNON_EXPLOSION_DAMAGE;
+    public static ForgeConfigSpec.DoubleValue M60A1_HE_CANNON_EXPLOSION_RADIUS;
+
+    public static ForgeConfigSpec.IntValue M60A3_HP;
+    public static ForgeConfigSpec.IntValue M60A3_SHOOT_COST;
+    public static ForgeConfigSpec.IntValue M60A3_ENERGY_COST;
+    public static ForgeConfigSpec.IntValue M60A3_MAX_ENERGY;
+    public static ForgeConfigSpec.IntValue M60A3_AP_CANNON_DAMAGE;
+    public static ForgeConfigSpec.IntValue M60A3_AP_CANNON_EXPLOSION_DAMAGE;
+    public static ForgeConfigSpec.DoubleValue M60A3_AP_CANNON_EXPLOSION_RADIUS;
+    public static ForgeConfigSpec.IntValue M60A3_HE_CANNON_DAMAGE;
+    public static ForgeConfigSpec.IntValue M60A3_HE_CANNON_EXPLOSION_DAMAGE;
+    public static ForgeConfigSpec.DoubleValue M60A3_HE_CANNON_EXPLOSION_RADIUS;
+
+    public static ForgeConfigSpec.IntValue M1_HP;
+    public static ForgeConfigSpec.IntValue M1_SHOOT_COST;
+    public static ForgeConfigSpec.IntValue M1_ENERGY_COST;
+    public static ForgeConfigSpec.IntValue M1_MAX_ENERGY;
+    public static ForgeConfigSpec.IntValue M1_AP_CANNON_DAMAGE;
+    public static ForgeConfigSpec.IntValue M1_AP_CANNON_EXPLOSION_DAMAGE;
+    public static ForgeConfigSpec.DoubleValue M1_AP_CANNON_EXPLOSION_RADIUS;
+    public static ForgeConfigSpec.IntValue M1_HE_CANNON_DAMAGE;
+    public static ForgeConfigSpec.IntValue M1_HE_CANNON_EXPLOSION_DAMAGE;
+    public static ForgeConfigSpec.DoubleValue M1_HE_CANNON_EXPLOSION_RADIUS;
+
+    public static ForgeConfigSpec.IntValue BTR80_HP;
+    public static ForgeConfigSpec.IntValue BTR80_ENERGY_COST;
+    public static ForgeConfigSpec.IntValue BTR80_MAX_ENERGY;
+    public static ForgeConfigSpec.DoubleValue BTR80_MAINMACHINE_GUN_DAMAGE;
+    public static ForgeConfigSpec.DoubleValue BTR80_MACHINE_GUN_DAMAGE;
+
     public static ForgeConfigSpec.IntValue PRISM_TANK_HP;
     public static ForgeConfigSpec.IntValue PRISM_TANK_MAX_ENERGY;
     public static ForgeConfigSpec.IntValue PRISM_TANK_ENERGY_COST;
@@ -417,6 +500,297 @@ public class VehicleConfig {
 
         builder.comment("The swarm drone explosion radius of YX-100");
         YX_100_SWARM_EXPLOSION_RADIUS = builder.defineInRange("yx_100_swarm_drone_explosion_radius", 5d, 1d, 10000000d);
+
+        builder.pop();
+
+        builder.push("M4A3E8");
+
+        builder.comment("The health of M4A3E8");
+        M4A3E8_HP = builder.defineInRange("m4a3e8_hp", 500, 1, 10000000);
+
+        builder.comment("The energy cost of M4A3E8 per tick");
+        M4A3E8_ENERGY_COST = builder.defineInRange("m4a3e8_energy_cost", 128, 0, 2147483647);
+
+        builder.comment("The energy cost of M4A3E8 per shoot");
+        M4A3E8_SHOOT_COST = builder.defineInRange("m4a3e8_shoot_cost", 24000, 0, 2147483647);
+
+        builder.comment("The max energy storage of M4A3E8");
+        M4A3E8_MAX_ENERGY = builder.defineInRange("m4a3e8_max_energy", 20000000, 0, 2147483647);
+
+        builder.comment("The cannon damage of M4A3E8");
+        M4A3E8_AP_CANNON_DAMAGE = builder.defineInRange("m4a3e8_ap_cannon_damage", 500, 1, 10000000);
+
+        builder.comment("The cannon explosion damage of M4A3E8");
+        M4A3E8_AP_CANNON_EXPLOSION_DAMAGE = builder.defineInRange("m4a3e8_ap_cannon_explosion_damage", 100, 1, 10000000);
+
+        builder.comment("The cannon explosion radius of M4A3E8");
+        M4A3E8_AP_CANNON_EXPLOSION_RADIUS = builder.defineInRange("m4a3e8_ap_cannon_explosion_radius", 4d, 1d, 10000000d);
+
+        builder.comment("The cannon damage of M4A3E8");
+        M4A3E8_HE_CANNON_DAMAGE = builder.defineInRange("m4a3e8_he_cannon_damage", 150, 1, 10000000);
+
+        builder.comment("The cannon explosion damage of M4A3E8");
+        M4A3E8_HE_CANNON_EXPLOSION_DAMAGE = builder.defineInRange("m4a3e8_he_cannon_explosion_damage", 150, 1, 10000000);
+
+        builder.comment("The cannon explosion radius of M4A3E8");
+        M4A3E8_HE_CANNON_EXPLOSION_RADIUS = builder.defineInRange("m4a3e8_he_cannon_explosion_radius", 10d, 1d, 10000000d);
+
+        builder.pop();
+
+        builder.push("M46");
+
+        builder.comment("The health of M46");
+        M46_HP = builder.defineInRange("m46_hp", 500, 1, 10000000);
+
+        builder.comment("The energy cost of M46 per tick");
+        M46_ENERGY_COST = builder.defineInRange("m46_energy_cost", 128, 0, 2147483647);
+
+        builder.comment("The energy cost of M46 per shoot");
+        M46_SHOOT_COST = builder.defineInRange("m46_shoot_cost", 24000, 0, 2147483647);
+
+        builder.comment("The max energy storage of M46");
+        M46_MAX_ENERGY = builder.defineInRange("m46_max_energy", 20000000, 0, 2147483647);
+
+        builder.comment("The cannon damage of M46");
+        M46_AP_CANNON_DAMAGE = builder.defineInRange("m46_ap_cannon_damage", 500, 1, 10000000);
+
+        builder.comment("The cannon explosion damage of M46");
+        M46_AP_CANNON_EXPLOSION_DAMAGE = builder.defineInRange("m46_ap_cannon_explosion_damage", 100, 1, 10000000);
+
+        builder.comment("The cannon explosion radius of M46");
+        M46_AP_CANNON_EXPLOSION_RADIUS = builder.defineInRange("m46_ap_cannon_explosion_radius", 4d, 1d, 10000000d);
+
+        builder.comment("The cannon damage of M46");
+        M46_HE_CANNON_DAMAGE = builder.defineInRange("m46_he_cannon_damage", 150, 1, 10000000);
+
+        builder.comment("The cannon explosion damage of M46");
+        M46_HE_CANNON_EXPLOSION_DAMAGE = builder.defineInRange("m46_he_cannon_explosion_damage", 150, 1, 10000000);
+
+        builder.comment("The cannon explosion radius of M46");
+        M46_HE_CANNON_EXPLOSION_RADIUS = builder.defineInRange("m46_he_cannon_explosion_radius", 10d, 1d, 10000000d);
+
+        builder.pop();
+
+        builder.push("M4A3E8");
+
+        builder.comment("The health of M4A3E8");
+        M4A3E8_HP = builder.defineInRange("m4a3e8_hp", 500, 1, 10000000);
+
+        builder.comment("The energy cost of M4A3E8 per tick");
+        M4A3E8_ENERGY_COST = builder.defineInRange("m4a3e8_energy_cost", 128, 0, 2147483647);
+
+        builder.comment("The energy cost of M4A3E8 per shoot");
+        M4A3E8_SHOOT_COST = builder.defineInRange("m4a3e8_shoot_cost", 24000, 0, 2147483647);
+
+        builder.comment("The max energy storage of M4A3E8");
+        M4A3E8_MAX_ENERGY = builder.defineInRange("m4a3e8_max_energy", 20000000, 0, 2147483647);
+
+        builder.comment("The cannon damage of M4A3E8");
+        M4A3E8_AP_CANNON_DAMAGE = builder.defineInRange("m4a3e8_ap_cannon_damage", 500, 1, 10000000);
+
+        builder.comment("The cannon explosion damage of M4A3E8");
+        M4A3E8_AP_CANNON_EXPLOSION_DAMAGE = builder.defineInRange("m4a3e8_ap_cannon_explosion_damage", 100, 1, 10000000);
+
+        builder.comment("The cannon explosion radius of M4A3E8");
+        M4A3E8_AP_CANNON_EXPLOSION_RADIUS = builder.defineInRange("m4a3e8_ap_cannon_explosion_radius", 4d, 1d, 10000000d);
+
+        builder.comment("The cannon damage of M4A3E8");
+        M4A3E8_HE_CANNON_DAMAGE = builder.defineInRange("m4a3e8_he_cannon_damage", 150, 1, 10000000);
+
+        builder.comment("The cannon explosion damage of M4A3E8");
+        M4A3E8_HE_CANNON_EXPLOSION_DAMAGE = builder.defineInRange("m4a3e8_he_cannon_explosion_damage", 150, 1, 10000000);
+
+        builder.comment("The cannon explosion radius of M4A3E8");
+        M4A3E8_HE_CANNON_EXPLOSION_RADIUS = builder.defineInRange("m4a3e8_he_cannon_explosion_radius", 10d, 1d, 10000000d);
+
+        builder.pop();
+
+        builder.push("M47");
+
+        builder.comment("The health of M47");
+        M47_HP = builder.defineInRange("m47_hp", 500, 1, 10000000);
+
+        builder.comment("The energy cost of M47 per tick");
+        M47_ENERGY_COST = builder.defineInRange("m47_energy_cost", 128, 0, 2147483647);
+
+        builder.comment("The energy cost of M47 per shoot");
+        M47_SHOOT_COST = builder.defineInRange("m47_shoot_cost", 24000, 0, 2147483647);
+
+        builder.comment("The max energy storage of M47");
+        M47_MAX_ENERGY = builder.defineInRange("m47_max_energy", 20000000, 0, 2147483647);
+
+        builder.comment("The cannon damage of M47");
+        M47_AP_CANNON_DAMAGE = builder.defineInRange("m47_ap_cannon_damage", 500, 1, 10000000);
+
+        builder.comment("The cannon explosion damage of M47");
+        M47_AP_CANNON_EXPLOSION_DAMAGE = builder.defineInRange("m47_ap_cannon_explosion_damage", 100, 1, 10000000);
+
+        builder.comment("The cannon explosion radius of M47");
+        M47_AP_CANNON_EXPLOSION_RADIUS = builder.defineInRange("m47_ap_cannon_explosion_radius", 4d, 1d, 10000000d);
+
+        builder.comment("The cannon damage of M47");
+        M47_HE_CANNON_DAMAGE = builder.defineInRange("m47_he_cannon_damage", 150, 1, 10000000);
+
+        builder.comment("The cannon explosion damage of M47");
+        M47_HE_CANNON_EXPLOSION_DAMAGE = builder.defineInRange("m47_he_cannon_explosion_damage", 150, 1, 10000000);
+
+        builder.comment("The cannon explosion radius of M47");
+        M47_HE_CANNON_EXPLOSION_RADIUS = builder.defineInRange("m47_he_cannon_explosion_radius", 10d, 1d, 10000000d);
+
+        builder.pop();
+
+        builder.push("M48");
+
+        builder.comment("The health of M48");
+        M48_HP = builder.defineInRange("m48_hp", 500, 1, 10000000);
+
+        builder.comment("The energy cost of M48 per tick");
+        M48_ENERGY_COST = builder.defineInRange("m48_energy_cost", 128, 0, 2147483647);
+
+        builder.comment("The energy cost of M48 per shoot");
+        M48_SHOOT_COST = builder.defineInRange("m48_shoot_cost", 24000, 0, 2147483647);
+
+        builder.comment("The max energy storage of M48");
+        M48_MAX_ENERGY = builder.defineInRange("m48_max_energy", 20000000, 0, 2147483647);
+
+        builder.comment("The cannon damage of M48");
+        M48_AP_CANNON_DAMAGE = builder.defineInRange("m48_ap_cannon_damage", 500, 1, 10000000);
+
+        builder.comment("The cannon explosion damage of M48");
+        M48_AP_CANNON_EXPLOSION_DAMAGE = builder.defineInRange("m48_ap_cannon_explosion_damage", 100, 1, 10000000);
+
+        builder.comment("The cannon explosion radius of M48");
+        M48_AP_CANNON_EXPLOSION_RADIUS = builder.defineInRange("m48_ap_cannon_explosion_radius", 4d, 1d, 10000000d);
+
+        builder.comment("The cannon damage of M48");
+        M48_HE_CANNON_DAMAGE = builder.defineInRange("m48_he_cannon_damage", 150, 1, 10000000);
+
+        builder.comment("The cannon explosion damage of M48");
+        M48_HE_CANNON_EXPLOSION_DAMAGE = builder.defineInRange("m48_he_cannon_explosion_damage", 150, 1, 10000000);
+
+        builder.comment("The cannon explosion radius of M48");
+        M48_HE_CANNON_EXPLOSION_RADIUS = builder.defineInRange("m48_he_cannon_explosion_radius", 10d, 1d, 10000000d);
+
+        builder.pop();
+
+        builder.push("M60A1");
+
+        builder.comment("The health of M60A1");
+        M60A1_HP = builder.defineInRange("m60a1_hp", 500, 1, 10000000);
+
+        builder.comment("The energy cost of M60A1 per tick");
+        M60A1_ENERGY_COST = builder.defineInRange("m60a1_energy_cost", 128, 0, 2147483647);
+
+        builder.comment("The energy cost of M60A1 per shoot");
+        M60A1_SHOOT_COST = builder.defineInRange("m60a1_shoot_cost", 24000, 0, 2147483647);
+
+        builder.comment("The max energy storage of M60A1");
+        M60A1_MAX_ENERGY = builder.defineInRange("m60a1_max_energy", 20000000, 0, 2147483647);
+
+        builder.comment("The cannon damage of M60A1");
+        M60A1_AP_CANNON_DAMAGE = builder.defineInRange("m60a1_ap_cannon_damage", 500, 1, 10000000);
+
+        builder.comment("The cannon explosion damage of M60A1");
+        M60A1_AP_CANNON_EXPLOSION_DAMAGE = builder.defineInRange("m60a1_ap_cannon_explosion_damage", 100, 1, 10000000);
+
+        builder.comment("The cannon explosion radius of M60A1");
+        M60A1_AP_CANNON_EXPLOSION_RADIUS = builder.defineInRange("m60a1_ap_cannon_explosion_radius", 4d, 1d, 10000000d);
+
+        builder.comment("The cannon damage of M60A1");
+        M60A1_HE_CANNON_DAMAGE = builder.defineInRange("m60a1_he_cannon_damage", 150, 1, 10000000);
+
+        builder.comment("The cannon explosion damage of M60A1");
+        M60A1_HE_CANNON_EXPLOSION_DAMAGE = builder.defineInRange("m60a1_he_cannon_explosion_damage", 150, 1, 10000000);
+
+        builder.comment("The cannon explosion radius of M60A1");
+        M60A1_HE_CANNON_EXPLOSION_RADIUS = builder.defineInRange("m60a1_he_cannon_explosion_radius", 10d, 1d, 10000000d);
+
+        builder.pop();
+
+        builder.push("M60A3");
+
+        builder.comment("The health of M60A3");
+        M60A3_HP = builder.defineInRange("m60a3_hp", 500, 1, 10000000);
+
+        builder.comment("The energy cost of M60A3 per tick");
+        M60A3_ENERGY_COST = builder.defineInRange("m60a3_energy_cost", 128, 0, 2147483647);
+
+        builder.comment("The energy cost of M60A3 per shoot");
+        M60A3_SHOOT_COST = builder.defineInRange("m60a3_shoot_cost", 24000, 0, 2147483647);
+
+        builder.comment("The max energy storage of M60A3");
+        M60A3_MAX_ENERGY = builder.defineInRange("m60a3_max_energy", 20000000, 0, 2147483647);
+
+        builder.comment("The cannon damage of M60A3");
+        M60A3_AP_CANNON_DAMAGE = builder.defineInRange("m60a3_ap_cannon_damage", 500, 1, 10000000);
+
+        builder.comment("The cannon explosion damage of M60A3");
+        M60A3_AP_CANNON_EXPLOSION_DAMAGE = builder.defineInRange("m60a3_ap_cannon_explosion_damage", 100, 1, 10000000);
+
+        builder.comment("The cannon explosion radius of M60A3");
+        M60A3_AP_CANNON_EXPLOSION_RADIUS = builder.defineInRange("m60a3_ap_cannon_explosion_radius", 4d, 1d, 10000000d);
+
+        builder.comment("The cannon damage of M60A3");
+        M60A3_HE_CANNON_DAMAGE = builder.defineInRange("m60a3_he_cannon_damage", 150, 1, 10000000);
+
+        builder.comment("The cannon explosion damage of M60A3");
+        M60A3_HE_CANNON_EXPLOSION_DAMAGE = builder.defineInRange("m60a3_he_cannon_explosion_damage", 150, 1, 10000000);
+
+        builder.comment("The cannon explosion radius of M60A3");
+        M60A3_HE_CANNON_EXPLOSION_RADIUS = builder.defineInRange("m60a3_he_cannon_explosion_radius", 10d, 1d, 10000000d);
+
+        builder.pop();
+
+        builder.push("M1");
+
+        builder.comment("The health of M1");
+        M1_HP = builder.defineInRange("m1_hp", 500, 1, 10000000);
+
+        builder.comment("The energy cost of M1 per tick");
+        M1_ENERGY_COST = builder.defineInRange("m1_energy_cost", 128, 0, 2147483647);
+
+        builder.comment("The energy cost of M1 per shoot");
+        M1_SHOOT_COST = builder.defineInRange("m1_shoot_cost", 24000, 0, 2147483647);
+
+        builder.comment("The max energy storage of M1");
+        M1_MAX_ENERGY = builder.defineInRange("m1_max_energy", 20000000, 0, 2147483647);
+
+        builder.comment("The cannon damage of M1");
+        M1_AP_CANNON_DAMAGE = builder.defineInRange("m1_ap_cannon_damage", 500, 1, 10000000);
+
+        builder.comment("The cannon explosion damage of M1");
+        M1_AP_CANNON_EXPLOSION_DAMAGE = builder.defineInRange("m1_ap_cannon_explosion_damage", 100, 1, 10000000);
+
+        builder.comment("The cannon explosion radius of M1");
+        M1_AP_CANNON_EXPLOSION_RADIUS = builder.defineInRange("m1_ap_cannon_explosion_radius", 4d, 1d, 10000000d);
+
+        builder.comment("The cannon damage of M1");
+        M1_HE_CANNON_DAMAGE = builder.defineInRange("m1_he_cannon_damage", 150, 1, 10000000);
+
+        builder.comment("The cannon explosion damage of M1");
+        M1_HE_CANNON_EXPLOSION_DAMAGE = builder.defineInRange("m1_he_cannon_explosion_damage", 150, 1, 10000000);
+
+        builder.comment("The cannon explosion radius of M1");
+        M1_HE_CANNON_EXPLOSION_RADIUS = builder.defineInRange("m1_he_cannon_explosion_radius", 10d, 1d, 10000000d);
+
+        builder.pop();
+
+        builder.push("BTR-80");
+
+        builder.comment("The health of BTR-80");
+        BTR80_HP = builder.defineInRange("btr80_hp", 250, 1, 10000000);
+
+        builder.comment("The energy cost of BTR-80 per tick");
+        BTR80_ENERGY_COST = builder.defineInRange("btr80_energy_cost", 64, 0, 2147483647);
+
+        builder.comment("The max energy storage of BTR-80");
+        BTR80_MAX_ENERGY = builder.defineInRange("btr80_max_energy", 5000000, 0, 2147483647);
+
+        builder.comment("The main machine gun damage of BTR-80");
+        BTR80_MAINMACHINE_GUN_DAMAGE = builder.defineInRange("btr80_mainmachine_gun_damage", 27.5, 1d, 10000000d);
+
+        builder.comment("The machine gun damage of BTR-80");
+        BTR80_MACHINE_GUN_DAMAGE = builder.defineInRange("btr80_machine_gun_damage", 9.5, 1d, 10000000d);
 
         builder.pop();
 

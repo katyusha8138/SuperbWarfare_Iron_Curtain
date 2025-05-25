@@ -45,6 +45,14 @@ public class ModEntityRenderers {
         event.registerEntityRenderer(ModEntities.WG_MISSILE.get(), WgMissileRenderer::new);
         event.registerEntityRenderer(ModEntities.LASER_TOWER.get(), LaserTowerRenderer::new);
         event.registerEntityRenderer(ModEntities.YX_100.get(), Yx100Renderer::new);
+        event.registerEntityRenderer(ModEntities.M4A3E8.get(), M4a3e8Renderer::new);
+        event.registerEntityRenderer(ModEntities.M46.get(), M46Renderer::new);
+        event.registerEntityRenderer(ModEntities.M47.get(), M47Renderer::new);
+        event.registerEntityRenderer(ModEntities.M48.get(), M48Renderer::new);
+        event.registerEntityRenderer(ModEntities.M60A1.get(), M60a1Renderer::new);
+        event.registerEntityRenderer(ModEntities.M60A3.get(), M60a3Renderer::new);
+        event.registerEntityRenderer(ModEntities.M1.get(), M1Renderer::new);
+        event.registerEntityRenderer(ModEntities.BTR80.get(), Btr80Renderer::new);
         event.registerEntityRenderer(ModEntities.WATER_MASK.get(), WaterMaskEntityRenderer::new);
         event.registerEntityRenderer(ModEntities.PRISM_TANK.get(), PrismTankRenderer::new);
         event.registerEntityRenderer(ModEntities.SWARM_DRONE.get(), SwarmDroneRenderer::new);

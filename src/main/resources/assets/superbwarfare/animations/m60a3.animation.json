@@ -1,0 +1,28 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.m60a3.shot_maingun": {
+			"animation_length": 0.4583,
+			"bones": {
+				"maingun": {
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.0417": {
+							"vector": [0, 0, 16]
+						},
+						"0.4583": {
+							"vector": [0, 0, 0],
+							"easing": "easeInOutSine"
+						}
+					}
+				}
+			}
+		},
+		"animation.m60a3.idle": {
+			"loop": true
+		}
+	},
+	"geckolib_format_version": 2
+}

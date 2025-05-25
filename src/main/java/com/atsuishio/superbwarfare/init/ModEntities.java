@@ -107,6 +107,22 @@ public class ModEntities {
             EntityType.Builder.<Bmp2Entity>of(Bmp2Entity::new, MobCategory.MISC).setTrackingRange(64).setUpdateInterval(1).setCustomClientFactory(Bmp2Entity::new).fireImmune().sized(4f, 3f));
     public static final RegistryObject<EntityType<Yx100Entity>> YX_100 = register("yx_100",
             EntityType.Builder.<Yx100Entity>of(Yx100Entity::new, MobCategory.MISC).setTrackingRange(64).setUpdateInterval(1).setCustomClientFactory(Yx100Entity::new).fireImmune().sized(4.6f, 3.25f));
+    public static final RegistryObject<EntityType<M4a3e8Entity>> M4A3E8 = register("m4a3e8",
+            EntityType.Builder.<M4a3e8Entity>of(M4a3e8Entity::new, MobCategory.MISC).setTrackingRange(64).setUpdateInterval(1).setCustomClientFactory(M4a3e8Entity::new).fireImmune().sized(4.4f, 3.2f));
+    public static final RegistryObject<EntityType<M46Entity>> M46 = register("m46",
+            EntityType.Builder.<M46Entity>of(M46Entity::new, MobCategory.MISC).setTrackingRange(64).setUpdateInterval(1).setCustomClientFactory(M46Entity::new).fireImmune().sized(5.4f, 3.6f));
+    public static final RegistryObject<EntityType<M47Entity>> M47 = register("m47",
+            EntityType.Builder.<M47Entity>of(M47Entity::new, MobCategory.MISC).setTrackingRange(64).setUpdateInterval(1).setCustomClientFactory(M47Entity::new).fireImmune().sized(5.4f, 3.6f));
+    public static final RegistryObject<EntityType<M48Entity>> M48 = register("m48",
+            EntityType.Builder.<M48Entity>of(M48Entity::new, MobCategory.MISC).setTrackingRange(64).setUpdateInterval(1).setCustomClientFactory(M48Entity::new).fireImmune().sized(5.6f, 3.6f));
+    public static final RegistryObject<EntityType<M60a1Entity>> M60A1 = register("m60a1",
+            EntityType.Builder.<M60a1Entity>of(M60a1Entity::new, MobCategory.MISC).setTrackingRange(64).setUpdateInterval(1).setCustomClientFactory(M60a1Entity::new).fireImmune().sized(5.8f, 3.7f));
+    public static final RegistryObject<EntityType<M60a3Entity>> M60A3 = register("m60a3",
+            EntityType.Builder.<M60a3Entity>of(M60a3Entity::new, MobCategory.MISC).setTrackingRange(64).setUpdateInterval(1).setCustomClientFactory(M60a3Entity::new).fireImmune().sized(5.8f, 3.7f));
+    public static final RegistryObject<EntityType<M1Entity>> M1 = register("m1",
+            EntityType.Builder.<M1Entity>of(M1Entity::new, MobCategory.MISC).setTrackingRange(64).setUpdateInterval(1).setCustomClientFactory(M1Entity::new).fireImmune().sized(5.8f, 3.7f));
+    public static final RegistryObject<EntityType<Btr80Entity>> BTR80 = register("btr80",
+            EntityType.Builder.<Btr80Entity>of(Btr80Entity::new, MobCategory.MISC).setTrackingRange(64).setUpdateInterval(1).setCustomClientFactory(Btr80Entity::new).fireImmune().sized(5.4f, 3f));
 
     public static final RegistryObject<EntityType<DroneEntity>> DRONE = register("drone",
             EntityType.Builder.<DroneEntity>of(DroneEntity::new, MobCategory.MISC).setTrackingRange(64).setUpdateInterval(1).setCustomClientFactory(DroneEntity::new).sized(0.6f, 0.2f));

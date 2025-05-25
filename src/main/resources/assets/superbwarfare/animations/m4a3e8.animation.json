@@ -1,0 +1,40 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.m4a3e8.shot_maingun": {
+			"animation_length": 0.4375,
+			"bones": {
+				"maingun": {
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.0625": {
+							"vector": [0, 0, 10],
+							"easing": "easeInSine"
+						},
+						"0.1875": {
+							"vector": [0, 0, 8],
+							"easing": "easeInCubic"
+						},
+						"0.25": {
+							"vector": [0, 0, 6]
+						},
+						"0.3125": {
+							"vector": [0, 0, 4]
+						},
+						"0.375": {
+							"vector": [0, 0, 2]
+						},
+						"0.4375": {
+							"vector": [0, 0, 0]
+						}
+					}
+				}
+			}
+		},
+		"animation.m4a3e8.idle": {
+			"loop": true
+		}
+	}
+}

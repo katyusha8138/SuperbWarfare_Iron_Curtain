@@ -1,0 +1,29 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.m47.shot_maingun": {
+			"animation_length": 0.75,
+			"bones": {
+				"maingun": {
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.0833": {
+							"vector": [0, 0, 10],
+							"easing": "easeInSine"
+						},
+						"0.5833": {
+							"vector": [0, 0, 0],
+							"easing": "easeInOutSine"
+						}
+					}
+				}
+			}
+		},
+		"animation.m47.idle": {
+			"loop": true
+		}
+	},
+	"geckolib_format_version": 2
+}
