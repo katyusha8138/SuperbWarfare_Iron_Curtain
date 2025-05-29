@@ -68,16 +68,16 @@ import java.util.Comparator;
 
 import static com.atsuishio.superbwarfare.tools.ParticleTool.sendParticle;
 
-public class Btr80Entity extends ContainerMobileVehicleEntity implements GeoEntity, LandArmorEntity, WeaponVehicleEntity {
+public class Btr60Entity extends ContainerMobileVehicleEntity implements GeoEntity, LandArmorEntity, WeaponVehicleEntity {
 
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 
-    public Btr80Entity(PlayMessages.SpawnEntity packet, Level world) {
-        this(ModEntities.BTR80.get(), world);
+    public Btr60Entity(PlayMessages.SpawnEntity packet, Level world) {
+        this(ModEntities.BTR60.get(), world);
         DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> ClientSoundHandler.playClientSoundInstance(this));
     }
 
-    public Btr80Entity(EntityType<Btr80Entity> type, Level world) {
+    public Btr60Entity(EntityType<Btr60Entity> type, Level world) {
         super(type, world);
         this.setMaxUpStep(1.5f);
     }
@@ -88,7 +88,7 @@ public class Btr80Entity extends ContainerMobileVehicleEntity implements GeoEnti
                 new VehicleWeapon[]{
                                 // 重机枪
                         new ProjectileWeapon()
-                                .damage(VehicleConfig.BTR80_MAINMACHINE_GUN_DAMAGE.get())
+                                .damage(VehicleConfig.BTR60_MAINMACHINE_GUN_DAMAGE.get())
                                 .headShot(2)
                                 .zoom(false)
                                 .bypassArmorRate(0.4f)
@@ -99,7 +99,7 @@ public class Btr80Entity extends ContainerMobileVehicleEntity implements GeoEnti
                                 .sound3pVeryFar(ModSounds.M_2_VERYFAR.get()),
                                 // 机枪
                         new ProjectileWeapon()
-                                .damage(VehicleConfig.BTR80_MACHINE_GUN_DAMAGE.get())
+                                .damage(VehicleConfig.BTR60_MACHINE_GUN_DAMAGE.get())
                                 .headShot(2)
                                 .zoom(false)
                                 .sound(ModSounds.INTO_CANNON.get())
@@ -200,7 +200,7 @@ public class Btr80Entity extends ContainerMobileVehicleEntity implements GeoEnti
         this.setDeltaMovement(this.getDeltaMovement().add(0.0, fluidFloat, 0.0));
 
         if (this.onGround()) {
-            float f0 = 0.53f + 0.25f * Mth.abs(90 - (float) calculateAngle(this.getDeltaMovement(), this.getViewVector(1))) / 90;
+            float f0 = 0.51f + 0.25f * Mth.abs(90 - (float) calculateAngle(this.getDeltaMovement(), this.getViewVector(1))) / 90;
             this.setDeltaMovement(this.getDeltaMovement().add(this.getViewVector(1).normalize().scale(0.05 * this.getDeltaMovement().horizontalDistance())));
             this.setDeltaMovement(this.getDeltaMovement().multiply(f0, 0.85, f0));
 
@@ -377,7 +377,7 @@ public class Btr80Entity extends ContainerMobileVehicleEntity implements GeoEnti
         }
 
         if (this.forwardInputDown || this.backInputDown) {
-            this.consumeEnergy(VehicleConfig.BTR80_ENERGY_COST.get());
+            this.consumeEnergy(VehicleConfig.BTR60_ENERGY_COST.get());
         }
 
         this.entityData.set(POWER, this.entityData.get(POWER) * (upInputDown ? 0.5f : (rightInputDown || leftInputDown) ? 0.977f : 0.99f));
@@ -545,11 +545,11 @@ public class Btr80Entity extends ContainerMobileVehicleEntity implements GeoEnti
         this.clampRotation(entity);
     }
 
-    private PlayState firePredicate(AnimationState<Btr80Entity> event) {
+    private PlayState firePredicate(AnimationState<Btr60Entity> event) {
         if (this.entityData.get(FIRE_ANIM) > 1 && getWeaponIndex(0) == 0) {
-            return event.setAndContinue(RawAnimation.begin().thenPlay("animation.btr80.shot_maingun"));
+            return event.setAndContinue(RawAnimation.begin().thenPlay("animation.btr60.shot_maingun"));
         }
-        return event.setAndContinue(RawAnimation.begin().thenLoop("animation.btr80.idle"));
+        return event.setAndContinue(RawAnimation.begin().thenLoop("animation.btr60.idle"));
     }
 
     @Override
@@ -564,12 +564,12 @@ public class Btr80Entity extends ContainerMobileVehicleEntity implements GeoEnti
 
     @Override
     public int getMaxEnergy() {
-        return VehicleConfig.BTR80_MAX_ENERGY.get();
+        return VehicleConfig.BTR60_MAX_ENERGY.get();
     }
 
     @Override
     public float getMaxHealth() {
-        return VehicleConfig.BTR80_HP.get();
+        return VehicleConfig.BTR60_HP.get();
     }
 
     @Override

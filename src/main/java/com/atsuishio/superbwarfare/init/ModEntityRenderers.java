@@ -35,6 +35,7 @@ public class ModEntityRenderers {
         event.registerEntityRenderer(ModEntities.SPEEDBOAT.get(), SpeedboatRenderer::new);
         event.registerEntityRenderer(ModEntities.WHEEL_CHAIR.get(), WheelChairRenderer::new);
         event.registerEntityRenderer(ModEntities.AH_6.get(), Ah6Renderer::new);
+        event.registerEntityRenderer(ModEntities.UH_1.get(), Uh1Renderer::new);
         event.registerEntityRenderer(ModEntities.FLARE_DECOY.get(), FlareDecoyEntityRenderer::new);
         event.registerEntityRenderer(ModEntities.SMOKE_DECOY.get(), SmokeDecoyEntityRenderer::new);
         event.registerEntityRenderer(ModEntities.LAV_150.get(), Lav150Renderer::new);
@@ -52,7 +53,11 @@ public class ModEntityRenderers {
         event.registerEntityRenderer(ModEntities.M60A1.get(), M60a1Renderer::new);
         event.registerEntityRenderer(ModEntities.M60A3.get(), M60a3Renderer::new);
         event.registerEntityRenderer(ModEntities.M1.get(), M1Renderer::new);
+        event.registerEntityRenderer(ModEntities.BTR60.get(), Btr60Renderer::new);
+        event.registerEntityRenderer(ModEntities.BTR70.get(), Btr70Renderer::new);
         event.registerEntityRenderer(ModEntities.BTR80.get(), Btr80Renderer::new);
+        event.registerEntityRenderer(ModEntities.M113.get(), M113Renderer::new);
+        event.registerEntityRenderer(ModEntities.M113A2.get(), M113a2Renderer::new);
         event.registerEntityRenderer(ModEntities.WATER_MASK.get(), WaterMaskEntityRenderer::new);
         event.registerEntityRenderer(ModEntities.PRISM_TANK.get(), PrismTankRenderer::new);
         event.registerEntityRenderer(ModEntities.SWARM_DRONE.get(), SwarmDroneRenderer::new);

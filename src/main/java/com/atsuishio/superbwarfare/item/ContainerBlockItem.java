@@ -48,6 +48,7 @@ public class ContainerBlockItem extends BlockItem implements GeoItem {
         event.add(ModEntities.LASER_TOWER);
         event.add(ModEntities.SPEEDBOAT, true);
         event.add(ModEntities.AH_6);
+        event.add(ModEntities.UH_1);
         event.add(ModEntities.LAV_150, true);
         event.add(ModEntities.BMP_2, true);
         event.add(ModEntities.PRISM_TANK);
@@ -59,7 +60,11 @@ public class ContainerBlockItem extends BlockItem implements GeoItem {
         event.add(ModEntities.M60A1);
         event.add(ModEntities.M60A3);
         event.add(ModEntities.M1);
+        event.add(ModEntities.BTR60);
+        event.add(ModEntities.BTR70);
         event.add(ModEntities.BTR80);
+        event.add(ModEntities.M113);
+        event.add(ModEntities.M113A2);
         event.add(ModEntities.WHEEL_CHAIR);
         event.add(ModEntities.TOM_6);
         event.add(ModEntities.A_10A);

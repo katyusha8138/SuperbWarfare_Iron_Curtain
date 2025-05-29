@@ -67,6 +67,15 @@ public class VehicleConfig {
     public static ForgeConfigSpec.IntValue AH_6_ROCKET_EXPLOSION_RADIUS;
     public static ForgeConfigSpec.BooleanValue AH_6_CANNON_DESTROY;
 
+    public static ForgeConfigSpec.IntValue UH_1_HP;
+    public static ForgeConfigSpec.IntValue UH_1_MIN_ENERGY_COST;
+    public static ForgeConfigSpec.IntValue UH_1_MAX_ENERGY_COST;
+    public static ForgeConfigSpec.IntValue UH_1_MAX_ENERGY;
+    public static ForgeConfigSpec.IntValue UH_1_GUN_DAMAGE;
+    public static ForgeConfigSpec.IntValue UH_1_ROCKET_DAMAGE;
+    public static ForgeConfigSpec.IntValue UH_1_ROCKET_EXPLOSION_DAMAGE;
+    public static ForgeConfigSpec.IntValue UH_1_ROCKET_EXPLOSION_RADIUS;
+
     public static ForgeConfigSpec.IntValue LAV_150_HP;
     public static ForgeConfigSpec.IntValue LAV_150_ENERGY_COST;
     public static ForgeConfigSpec.IntValue LAV_150_MAX_ENERGY;
@@ -178,11 +187,31 @@ public class VehicleConfig {
     public static ForgeConfigSpec.IntValue M1_HE_CANNON_EXPLOSION_DAMAGE;
     public static ForgeConfigSpec.DoubleValue M1_HE_CANNON_EXPLOSION_RADIUS;
 
+    public static ForgeConfigSpec.IntValue BTR60_HP;
+    public static ForgeConfigSpec.IntValue BTR60_ENERGY_COST;
+    public static ForgeConfigSpec.IntValue BTR60_MAX_ENERGY;
+    public static ForgeConfigSpec.DoubleValue BTR60_MAINMACHINE_GUN_DAMAGE;
+    public static ForgeConfigSpec.DoubleValue BTR60_MACHINE_GUN_DAMAGE;
+
+    public static ForgeConfigSpec.IntValue BTR70_HP;
+    public static ForgeConfigSpec.IntValue BTR70_ENERGY_COST;
+    public static ForgeConfigSpec.IntValue BTR70_MAX_ENERGY;
+    public static ForgeConfigSpec.DoubleValue BTR70_MAINMACHINE_GUN_DAMAGE;
+    public static ForgeConfigSpec.DoubleValue BTR70_MACHINE_GUN_DAMAGE;
+
     public static ForgeConfigSpec.IntValue BTR80_HP;
     public static ForgeConfigSpec.IntValue BTR80_ENERGY_COST;
     public static ForgeConfigSpec.IntValue BTR80_MAX_ENERGY;
     public static ForgeConfigSpec.DoubleValue BTR80_MAINMACHINE_GUN_DAMAGE;
     public static ForgeConfigSpec.DoubleValue BTR80_MACHINE_GUN_DAMAGE;
+
+    public static ForgeConfigSpec.IntValue M113_HP;
+    public static ForgeConfigSpec.IntValue M113_ENERGY_COST;
+    public static ForgeConfigSpec.IntValue M113_MAX_ENERGY;
+
+    public static ForgeConfigSpec.IntValue M113A2_HP;
+    public static ForgeConfigSpec.IntValue M113A2_ENERGY_COST;
+    public static ForgeConfigSpec.IntValue M113A2_MAX_ENERGY;
 
     public static ForgeConfigSpec.IntValue PRISM_TANK_HP;
     public static ForgeConfigSpec.IntValue PRISM_TANK_MAX_ENERGY;
@@ -394,6 +423,35 @@ public class VehicleConfig {
 
         builder.comment("Whether to destroy the block when cannon of AH-6 hits a block");
         AH_6_CANNON_DESTROY = builder.define("ah_6_cannon_destroy", true);
+
+        builder.pop();
+
+        builder.push("UH_1");
+
+        builder.comment("The health of UH-1");
+        UH_1_HP = builder.defineInRange("uh_1_hp", 250, 1, 10000000);
+
+        builder.comment("The min energy cost of UH-1 per tick");
+        UH_1_MIN_ENERGY_COST = builder.defineInRange("uh_1_min_energy_cost", 64, 0, 2147483647);
+
+        builder.comment("The max energy cost of UH-1 per tick");
+        UH_1_MAX_ENERGY_COST = builder.defineInRange("uh_1_max_energy_cost", 128, 0, 2147483647);
+
+        builder.comment("The max energy storage of UH-1");
+        UH_1_MAX_ENERGY = builder.defineInRange("uh_1_max_energy", 5000000, 0, 2147483647);
+
+        builder.comment("The cannon damage of UH-1");
+        UH_1_GUN_DAMAGE = builder.defineInRange("uh_1_cannon_damage", 8, 1, 10000000);
+
+        builder.comment("The rocket damage of UH-1");
+        UH_1_ROCKET_DAMAGE = builder.defineInRange("uh_1_rocket_damage", 80, 1, 10000000);
+
+        builder.comment("The rocket explosion damage of UH-1");
+        UH_1_ROCKET_EXPLOSION_DAMAGE = builder.defineInRange("uh_1_rocket_explosion_damage", 40, 1, 10000000);
+
+        builder.comment("The rocket explosion radius of UH-1");
+        UH_1_ROCKET_EXPLOSION_RADIUS = builder.defineInRange("uh_1_rocket_explosion_radius", 5, 1, 10000000);
+
 
         builder.pop();
 
@@ -775,6 +833,45 @@ public class VehicleConfig {
 
         builder.pop();
 
+        builder.push("BTR-60");
+
+        builder.comment("The health of BTR-60");
+        BTR60_HP = builder.defineInRange("btr60_hp", 250, 1, 10000000);
+
+        builder.comment("The energy cost of BTR-60 per tick");
+        BTR60_ENERGY_COST = builder.defineInRange("btr60_energy_cost", 64, 0, 2147483647);
+
+        builder.comment("The max energy storage of BTR-60");
+        BTR60_MAX_ENERGY = builder.defineInRange("btr60_max_energy", 5000000, 0, 2147483647);
+
+        builder.comment("The main machine gun damage of BTR-60");
+        BTR60_MAINMACHINE_GUN_DAMAGE = builder.defineInRange("btr60_mainmachine_gun_damage", 27.5, 1d, 10000000d);
+
+        builder.comment("The machine gun damage of BTR-60");
+        BTR60_MACHINE_GUN_DAMAGE = builder.defineInRange("btr60_machine_gun_damage", 9.5, 1d, 10000000d);
+
+
+        builder.pop();
+
+        builder.push("BTR-70");
+
+        builder.comment("The health of BTR-70");
+        BTR70_HP = builder.defineInRange("btr70_hp", 250, 1, 10000000);
+
+        builder.comment("The energy cost of BTR-70 per tick");
+        BTR70_ENERGY_COST = builder.defineInRange("btr70_energy_cost", 64, 0, 2147483647);
+
+        builder.comment("The max energy storage of BTR-70");
+        BTR70_MAX_ENERGY = builder.defineInRange("btr70_max_energy", 5000000, 0, 2147483647);
+
+        builder.comment("The main machine gun damage of BTR-70");
+        BTR70_MAINMACHINE_GUN_DAMAGE = builder.defineInRange("btr70_mainmachine_gun_damage", 27.5, 1d, 10000000d);
+
+        builder.comment("The machine gun damage of BTR-70");
+        BTR70_MACHINE_GUN_DAMAGE = builder.defineInRange("btr70_machine_gun_damage", 9.5, 1d, 10000000d);
+
+        builder.pop();
+
         builder.push("BTR-80");
 
         builder.comment("The health of BTR-80");
@@ -791,6 +888,32 @@ public class VehicleConfig {
 
         builder.comment("The machine gun damage of BTR-80");
         BTR80_MACHINE_GUN_DAMAGE = builder.defineInRange("btr80_machine_gun_damage", 9.5, 1d, 10000000d);
+
+        builder.pop();
+
+        builder.push("M113");
+
+        builder.comment("The health of M113");
+        M113_HP = builder.defineInRange("m113_hp", 500, 1, 10000000);
+
+        builder.comment("The energy cost of M113 per tick");
+        M113_ENERGY_COST = builder.defineInRange("m113_energy_cost", 128, 0, 2147483647);
+
+        builder.comment("The max energy storage of M113");
+        M113_MAX_ENERGY = builder.defineInRange("m113_max_energy", 20000000, 0, 2147483647);
+
+        builder.pop();
+
+        builder.push("M113A2");
+
+        builder.comment("The health of M113A2");
+        M113A2_HP = builder.defineInRange("m113a2_hp", 500, 1, 10000000);
+
+        builder.comment("The energy cost of M113A2 per tick");
+        M113A2_ENERGY_COST = builder.defineInRange("m113a2_energy_cost", 128, 0, 2147483647);
+
+        builder.comment("The max energy storage of M113A2");
+        M113A2_MAX_ENERGY = builder.defineInRange("m113a2_max_energy", 20000000, 0, 2147483647);
 
         builder.pop();
 

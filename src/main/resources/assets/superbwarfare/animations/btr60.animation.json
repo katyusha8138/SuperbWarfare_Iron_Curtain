@@ -1,0 +1,28 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.btr60.shot_maingun": {
+			"animation_length": 0.0833,
+			"bones": {
+				"maingun": {
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.0417": {
+							"vector": [0, 0, -1]
+						},
+						"0.0833": {
+							"vector": [0, 0, 0],
+							"easing": "easeInSine"
+						}
+					}
+				}
+			}
+		},
+		"animation.btr60.idle": {
+			"loop": true
+		}
+	},
+	"geckolib_format_version": 2
+}
