@@ -35,6 +35,9 @@ public class VehicleConfig {
     public static ForgeConfigSpec.IntValue MLE1934_HE_EXPLOSION_RADIUS;
 
     public static ForgeConfigSpec.IntValue HEAVY_MACHINE_GUN_DAMAGE;
+    public static ForgeConfigSpec.IntValue VULCAN_DAMAGE;
+    public static ForgeConfigSpec.IntValue VULCAN_EXPLOSION_DAMAGE;
+    public static ForgeConfigSpec.DoubleValue VULCAN_EXPLOSION_RADIUS;
 
     public static ForgeConfigSpec.IntValue ANNIHILATOR_HP;
     public static ForgeConfigSpec.IntValue ANNIHILATOR_SHOOT_COST;
@@ -75,6 +78,12 @@ public class VehicleConfig {
     public static ForgeConfigSpec.IntValue UH_1_ROCKET_DAMAGE;
     public static ForgeConfigSpec.IntValue UH_1_ROCKET_EXPLOSION_DAMAGE;
     public static ForgeConfigSpec.IntValue UH_1_ROCKET_EXPLOSION_RADIUS;
+
+    public static ForgeConfigSpec.IntValue UH_60_HP;
+    public static ForgeConfigSpec.IntValue UH_60_MIN_ENERGY_COST;
+    public static ForgeConfigSpec.IntValue UH_60_MAX_ENERGY_COST;
+    public static ForgeConfigSpec.IntValue UH_60_MAX_ENERGY;
+    public static ForgeConfigSpec.IntValue UH_60_GUN_DAMAGE;
 
     public static ForgeConfigSpec.IntValue LAV_150_HP;
     public static ForgeConfigSpec.IntValue LAV_150_ENERGY_COST;
@@ -213,6 +222,57 @@ public class VehicleConfig {
     public static ForgeConfigSpec.IntValue M113A2_ENERGY_COST;
     public static ForgeConfigSpec.IntValue M113A2_MAX_ENERGY;
 
+    public static ForgeConfigSpec.IntValue M2_HP;
+    public static ForgeConfigSpec.IntValue M2_ENERGY_COST;
+    public static ForgeConfigSpec.IntValue M2_MAX_ENERGY;
+    public static ForgeConfigSpec.IntValue M2_CANNON_DAMAGE;
+    public static ForgeConfigSpec.IntValue M2_CANNON_EXPLOSION_DAMAGE;
+    public static ForgeConfigSpec.DoubleValue M2_CANNON_EXPLOSION_RADIUS;
+
+    public static ForgeConfigSpec.IntValue T54_HP;
+    public static ForgeConfigSpec.IntValue T54_SHOOT_COST;
+    public static ForgeConfigSpec.IntValue T54_ENERGY_COST;
+    public static ForgeConfigSpec.IntValue T54_MAX_ENERGY;
+    public static ForgeConfigSpec.IntValue T54_AP_CANNON_DAMAGE;
+    public static ForgeConfigSpec.IntValue T54_AP_CANNON_EXPLOSION_DAMAGE;
+    public static ForgeConfigSpec.DoubleValue T54_AP_CANNON_EXPLOSION_RADIUS;
+    public static ForgeConfigSpec.IntValue T54_HE_CANNON_DAMAGE;
+    public static ForgeConfigSpec.IntValue T54_HE_CANNON_EXPLOSION_DAMAGE;
+    public static ForgeConfigSpec.DoubleValue T54_HE_CANNON_EXPLOSION_RADIUS;
+
+    public static ForgeConfigSpec.IntValue T62_HP;
+    public static ForgeConfigSpec.IntValue T62_SHOOT_COST;
+    public static ForgeConfigSpec.IntValue T62_ENERGY_COST;
+    public static ForgeConfigSpec.IntValue T62_MAX_ENERGY;
+    public static ForgeConfigSpec.IntValue T62_AP_CANNON_DAMAGE;
+    public static ForgeConfigSpec.IntValue T62_AP_CANNON_EXPLOSION_DAMAGE;
+    public static ForgeConfigSpec.DoubleValue T62_AP_CANNON_EXPLOSION_RADIUS;
+    public static ForgeConfigSpec.IntValue T62_HE_CANNON_DAMAGE;
+    public static ForgeConfigSpec.IntValue T62_HE_CANNON_EXPLOSION_DAMAGE;
+    public static ForgeConfigSpec.DoubleValue T62_HE_CANNON_EXPLOSION_RADIUS;
+
+    public static ForgeConfigSpec.IntValue T64_HP;
+    public static ForgeConfigSpec.IntValue T64_SHOOT_COST;
+    public static ForgeConfigSpec.IntValue T64_ENERGY_COST;
+    public static ForgeConfigSpec.IntValue T64_MAX_ENERGY;
+    public static ForgeConfigSpec.IntValue T64_AP_CANNON_DAMAGE;
+    public static ForgeConfigSpec.IntValue T64_AP_CANNON_EXPLOSION_DAMAGE;
+    public static ForgeConfigSpec.DoubleValue T64_AP_CANNON_EXPLOSION_RADIUS;
+    public static ForgeConfigSpec.IntValue T64_HE_CANNON_DAMAGE;
+    public static ForgeConfigSpec.IntValue T64_HE_CANNON_EXPLOSION_DAMAGE;
+    public static ForgeConfigSpec.DoubleValue T64_HE_CANNON_EXPLOSION_RADIUS;
+
+    public static ForgeConfigSpec.IntValue T80BV_HP;
+    public static ForgeConfigSpec.IntValue T80BV_SHOOT_COST;
+    public static ForgeConfigSpec.IntValue T80BV_ENERGY_COST;
+    public static ForgeConfigSpec.IntValue T80BV_MAX_ENERGY;
+    public static ForgeConfigSpec.IntValue T80BV_AP_CANNON_DAMAGE;
+    public static ForgeConfigSpec.IntValue T80BV_AP_CANNON_EXPLOSION_DAMAGE;
+    public static ForgeConfigSpec.DoubleValue T80BV_AP_CANNON_EXPLOSION_RADIUS;
+    public static ForgeConfigSpec.IntValue T80BV_HE_CANNON_DAMAGE;
+    public static ForgeConfigSpec.IntValue T80BV_HE_CANNON_EXPLOSION_DAMAGE;
+    public static ForgeConfigSpec.DoubleValue T80BV_HE_CANNON_EXPLOSION_RADIUS;
+
     public static ForgeConfigSpec.IntValue PRISM_TANK_HP;
     public static ForgeConfigSpec.IntValue PRISM_TANK_MAX_ENERGY;
     public static ForgeConfigSpec.IntValue PRISM_TANK_ENERGY_COST;
@@ -240,6 +300,21 @@ public class VehicleConfig {
     public static ForgeConfigSpec.IntValue A_10_ROCKET_DAMAGE;
     public static ForgeConfigSpec.IntValue A_10_ROCKET_EXPLOSION_DAMAGE;
     public static ForgeConfigSpec.DoubleValue A_10_ROCKET_EXPLOSION_RADIUS;
+
+    public static ForgeConfigSpec.IntValue F_16A_HP;
+    public static ForgeConfigSpec.IntValue F_16A_MAX_ENERGY_COST;
+    public static ForgeConfigSpec.IntValue F_16A_MAX_ENERGY;
+
+    public static ForgeConfigSpec.IntValue F_16C_HP;
+    public static ForgeConfigSpec.IntValue F_16C_MAX_ENERGY_COST;
+    public static ForgeConfigSpec.IntValue F_16C_MAX_ENERGY;
+
+    public static ForgeConfigSpec.IntValue MIG_15_HP;
+    public static ForgeConfigSpec.IntValue MIG_15_MAX_ENERGY_COST;
+    public static ForgeConfigSpec.IntValue MIG_15_MAX_ENERGY;
+    public static ForgeConfigSpec.IntValue MIG_15_GUN_DAMAGE;
+    public static ForgeConfigSpec.IntValue MIG_15_GUN_EXPLOSION_DAMAGE;
+    public static ForgeConfigSpec.DoubleValue MIG_15_GUN_EXPLOSION_RADIUS;
 
     public static void init(ForgeConfigSpec.Builder builder) {
         builder.push("vehicle");
@@ -325,6 +400,19 @@ public class VehicleConfig {
 
         builder.comment("The gun damage of 12.7mm HMG");
         HEAVY_MACHINE_GUN_DAMAGE = builder.defineInRange("heavy_machine_gun_damage", 25, 1, 10000000);
+
+        builder.pop();
+
+        builder.push("M61 Vulcan");
+
+        builder.comment("The gun damage of 20mm M61 Vulcan");
+        VULCAN_DAMAGE = builder.defineInRange("vulcan_damage", 25, 1, 10000000);
+
+        builder.comment("The cannon explosion damage of 20mm M61 Vulcan");
+        VULCAN_EXPLOSION_DAMAGE = builder.defineInRange("vulcan_explosion_damage", 10, 1, 10000000);
+
+        builder.comment("The cannon explosion radius of 20mm M61 Vulcan");
+        VULCAN_EXPLOSION_RADIUS = builder.defineInRange("vulcan_explosion_radius", 4d, 1, 10000000);
 
         builder.pop();
 
@@ -451,6 +539,25 @@ public class VehicleConfig {
 
         builder.comment("The rocket explosion radius of UH-1");
         UH_1_ROCKET_EXPLOSION_RADIUS = builder.defineInRange("uh_1_rocket_explosion_radius", 5, 1, 10000000);
+
+        builder.pop();
+
+        builder.push("UH_60");
+
+        builder.comment("The health of UH-60");
+        UH_60_HP = builder.defineInRange("uh_60_hp", 250, 1, 10000000);
+
+        builder.comment("The min energy cost of UH-60 per tick");
+        UH_60_MIN_ENERGY_COST = builder.defineInRange("uh_60_min_energy_cost", 64, 0, 2147483647);
+
+        builder.comment("The max energy cost of UH-60 per tick");
+        UH_60_MAX_ENERGY_COST = builder.defineInRange("uh_60_max_energy_cost", 128, 0, 2147483647);
+
+        builder.comment("The max energy storage of UH-60");
+        UH_60_MAX_ENERGY = builder.defineInRange("uh_60_max_energy", 5000000, 0, 2147483647);
+
+        builder.comment("The cannon damage of UH-60");
+        UH_60_GUN_DAMAGE = builder.defineInRange("uh_60_cannon_damage", 8, 1, 10000000);
 
 
         builder.pop();
@@ -917,6 +1024,164 @@ public class VehicleConfig {
 
         builder.pop();
 
+        builder.push("M2");
+
+        builder.comment("The health of M2");
+        M2_HP = builder.defineInRange("m2_hp", 300, 1, 10000000);
+
+        builder.comment("The energy cost of M2 per tick");
+        M2_ENERGY_COST = builder.defineInRange("m2_energy_cost", 64, 0, 2147483647);
+
+        builder.comment("The max energy storage of M2");
+        M2_MAX_ENERGY = builder.defineInRange("m2_max_energy", 5000000, 0, 2147483647);
+
+        builder.comment("The cannon damage of M2");
+        M2_CANNON_DAMAGE = builder.defineInRange("m2_cannon_damage", 55, 1, 10000000);
+
+        builder.comment("The cannon explosion damage of M2");
+        M2_CANNON_EXPLOSION_DAMAGE = builder.defineInRange("m2_cannon_explosion_damage", 15, 1, 10000000);
+
+        builder.comment("The cannon explosion radius of M2");
+        M2_CANNON_EXPLOSION_RADIUS = builder.defineInRange("m2_cannon_explosion_radius", 4d, 1d, 10000000d);
+
+        builder.pop();
+
+        builder.push("T-54/55");
+
+        builder.comment("The health of T-54/55");
+        T54_HP = builder.defineInRange("t54_hp", 500, 1, 10000000);
+
+        builder.comment("The energy cost of T-54/55 per tick");
+        T54_ENERGY_COST = builder.defineInRange("t54_energy_cost", 128, 0, 2147483647);
+
+        builder.comment("The energy cost of T-54/55 per shoot");
+        T54_SHOOT_COST = builder.defineInRange("t54_shoot_cost", 24000, 0, 2147483647);
+
+        builder.comment("The max energy storage of T-54/55");
+        T54_MAX_ENERGY = builder.defineInRange("t54_max_energy", 20000000, 0, 2147483647);
+
+        builder.comment("The cannon damage of T-54/55");
+        T54_AP_CANNON_DAMAGE = builder.defineInRange("t54_ap_cannon_damage", 500, 1, 10000000);
+
+        builder.comment("The cannon explosion damage of T-54/55");
+        T54_AP_CANNON_EXPLOSION_DAMAGE = builder.defineInRange("t54_ap_cannon_explosion_damage", 100, 1, 10000000);
+
+        builder.comment("The cannon explosion radius of T-54/55");
+        T54_AP_CANNON_EXPLOSION_RADIUS = builder.defineInRange("t54_ap_cannon_explosion_radius", 4d, 1d, 10000000d);
+
+        builder.comment("The cannon damage of T-54/55");
+        T54_HE_CANNON_DAMAGE = builder.defineInRange("t54_he_cannon_damage", 150, 1, 10000000);
+
+        builder.comment("The cannon explosion damage of T-54/55");
+        T54_HE_CANNON_EXPLOSION_DAMAGE = builder.defineInRange("t54_he_cannon_explosion_damage", 150, 1, 10000000);
+
+        builder.comment("The cannon explosion radius of T-54/55");
+        T54_HE_CANNON_EXPLOSION_RADIUS = builder.defineInRange("t54_he_cannon_explosion_radius", 10d, 1d, 10000000d);
+
+        builder.pop();
+
+        builder.push("T-62");
+
+        builder.comment("The health of T-62");
+        T62_HP = builder.defineInRange("t62_hp", 500, 1, 10000000);
+
+        builder.comment("The energy cost of T-62 per tick");
+        T62_ENERGY_COST = builder.defineInRange("t62_energy_cost", 128, 0, 2147483647);
+
+        builder.comment("The energy cost of T-62 per shoot");
+        T62_SHOOT_COST = builder.defineInRange("t62_shoot_cost", 24000, 0, 2147483647);
+
+        builder.comment("The max energy storage of T-62");
+        T62_MAX_ENERGY = builder.defineInRange("t62_max_energy", 20000000, 0, 2147483647);
+
+        builder.comment("The cannon damage of T-62");
+        T62_AP_CANNON_DAMAGE = builder.defineInRange("t62_ap_cannon_damage", 500, 1, 10000000);
+
+        builder.comment("The cannon explosion damage of T-62");
+        T62_AP_CANNON_EXPLOSION_DAMAGE = builder.defineInRange("t62_ap_cannon_explosion_damage", 100, 1, 10000000);
+
+        builder.comment("The cannon explosion radius of T-62");
+        T62_AP_CANNON_EXPLOSION_RADIUS = builder.defineInRange("t62_ap_cannon_explosion_radius", 4d, 1d, 10000000d);
+
+        builder.comment("The cannon damage of T-62");
+        T62_HE_CANNON_DAMAGE = builder.defineInRange("t62_he_cannon_damage", 150, 1, 10000000);
+
+        builder.comment("The cannon explosion damage of T-62");
+        T62_HE_CANNON_EXPLOSION_DAMAGE = builder.defineInRange("t62_he_cannon_explosion_damage", 150, 1, 10000000);
+
+        builder.comment("The cannon explosion radius of T-62");
+        T62_HE_CANNON_EXPLOSION_RADIUS = builder.defineInRange("t62_he_cannon_explosion_radius", 10d, 1d, 10000000d);
+
+        builder.pop();
+
+        builder.push("T-64");
+
+        builder.comment("The health of T-64");
+        T64_HP = builder.defineInRange("t64_hp", 500, 1, 10000000);
+
+        builder.comment("The energy cost of T-64 per tick");
+        T64_ENERGY_COST = builder.defineInRange("t64_energy_cost", 128, 0, 2147483647);
+
+        builder.comment("The energy cost of T-64 per shoot");
+        T64_SHOOT_COST = builder.defineInRange("t64_shoot_cost", 24000, 0, 2147483647);
+
+        builder.comment("The max energy storage of T-64");
+        T64_MAX_ENERGY = builder.defineInRange("t64_max_energy", 20000000, 0, 2147483647);
+
+        builder.comment("The cannon damage of T-64");
+        T64_AP_CANNON_DAMAGE = builder.defineInRange("t64_ap_cannon_damage", 500, 1, 10000000);
+
+        builder.comment("The cannon explosion damage of T-64");
+        T64_AP_CANNON_EXPLOSION_DAMAGE = builder.defineInRange("t64_ap_cannon_explosion_damage", 100, 1, 10000000);
+
+        builder.comment("The cannon explosion radius of T-64");
+        T64_AP_CANNON_EXPLOSION_RADIUS = builder.defineInRange("t64_ap_cannon_explosion_radius", 4d, 1d, 10000000d);
+
+        builder.comment("The cannon damage of T-64");
+        T64_HE_CANNON_DAMAGE = builder.defineInRange("t64_he_cannon_damage", 150, 1, 10000000);
+
+        builder.comment("The cannon explosion damage of T-64");
+        T64_HE_CANNON_EXPLOSION_DAMAGE = builder.defineInRange("t64_he_cannon_explosion_damage", 150, 1, 10000000);
+
+        builder.comment("The cannon explosion radius of T-64");
+        T64_HE_CANNON_EXPLOSION_RADIUS = builder.defineInRange("t64_he_cannon_explosion_radius", 10d, 1d, 10000000d);
+
+        builder.pop();
+
+        builder.push("T-80BV");
+
+        builder.comment("The health of T-80BV");
+        T80BV_HP = builder.defineInRange("t80bv_hp", 500, 1, 10000000);
+
+        builder.comment("The energy cost of T-80BV per tick");
+        T80BV_ENERGY_COST = builder.defineInRange("t80bv_energy_cost", 128, 0, 2147483647);
+
+        builder.comment("The energy cost of T-80BV per shoot");
+        T80BV_SHOOT_COST = builder.defineInRange("t80bv_shoot_cost", 24000, 0, 2147483647);
+
+        builder.comment("The max energy storage of T-80BV");
+        T80BV_MAX_ENERGY = builder.defineInRange("t80bv_max_energy", 20000000, 0, 2147483647);
+
+        builder.comment("The cannon damage of T-80BV");
+        T80BV_AP_CANNON_DAMAGE = builder.defineInRange("t80bv_ap_cannon_damage", 500, 1, 10000000);
+
+        builder.comment("The cannon explosion damage of T-80BV");
+        T80BV_AP_CANNON_EXPLOSION_DAMAGE = builder.defineInRange("t80bv_ap_cannon_explosion_damage", 100, 1, 10000000);
+
+        builder.comment("The cannon explosion radius of T-80BV");
+        T80BV_AP_CANNON_EXPLOSION_RADIUS = builder.defineInRange("t80bv_ap_cannon_explosion_radius", 4d, 1d, 10000000d);
+
+        builder.comment("The cannon damage of T-80BV");
+        T80BV_HE_CANNON_DAMAGE = builder.defineInRange("t80bv_he_cannon_damage", 150, 1, 10000000);
+
+        builder.comment("The cannon explosion damage of T-80BV");
+        T80BV_HE_CANNON_EXPLOSION_DAMAGE = builder.defineInRange("t80bv_he_cannon_explosion_damage", 150, 1, 10000000);
+
+        builder.comment("The cannon explosion radius of T-80BV");
+        T80BV_HE_CANNON_EXPLOSION_RADIUS = builder.defineInRange("t80bv_he_cannon_explosion_radius", 10d, 1d, 10000000d);
+
+        builder.pop();
+
         builder.push("Prism Tank");
 
         builder.comment("The health of Prism Tank");
@@ -1001,6 +1266,54 @@ public class VehicleConfig {
 
         builder.comment("The rocket explosion radius of A-10");
         A_10_ROCKET_EXPLOSION_RADIUS = builder.defineInRange("A_10_rocket_explosion_radius", 6d, 1, 10000000);
+
+        builder.pop();
+
+        builder.push("F-16A Block10");
+
+        builder.comment("The health of F-16A Block10");
+        F_16A_HP = builder.defineInRange("F_16a_hp", 350, 1, 10000000);
+
+        builder.comment("The max energy cost of F-16A Block10 per tick");
+        F_16A_MAX_ENERGY_COST = builder.defineInRange("F_16a_max_energy_cost", 256, 0, 2147483647);
+
+        builder.comment("The max energy storage of F-16A Block10");
+        F_16A_MAX_ENERGY = builder.defineInRange("F_16a_max_energy", 10000000, 0, 2147483647);
+
+        builder.pop();
+
+        builder.push("F-16C Block30");
+
+        builder.comment("The health of F-16C Block30");
+        F_16C_HP = builder.defineInRange("F_16c_hp", 350, 1, 10000000);
+
+        builder.comment("The max energy cost of F-16C Block30 per tick");
+        F_16C_MAX_ENERGY_COST = builder.defineInRange("F_16c_max_energy_cost", 256, 0, 2147483647);
+
+        builder.comment("The max energy storage of F-16C Block30");
+        F_16C_MAX_ENERGY = builder.defineInRange("F_16c_max_energy", 10000000, 0, 2147483647);
+
+        builder.pop();
+
+        builder.push("MiG-15");
+
+        builder.comment("The health of MiG-15");
+        MIG_15_HP = builder.defineInRange("Mig_15_hp", 350, 1, 10000000);
+
+        builder.comment("The max energy cost of MiG-15 per tick");
+        MIG_15_MAX_ENERGY_COST = builder.defineInRange("Mig_15_max_energy_cost", 256, 0, 2147483647);
+
+        builder.comment("The max energy storage of MiG-15");
+        MIG_15_MAX_ENERGY = builder.defineInRange("Mig_15_max_energy", 10000000, 0, 2147483647);
+
+        builder.comment("The gun damage of MiG-15");
+        MIG_15_GUN_DAMAGE = builder.defineInRange("Mig_15_cannon_damage", 30, 1, 10000000);
+
+        builder.comment("The gun explosion damage of MiG-15");
+        MIG_15_GUN_EXPLOSION_DAMAGE = builder.defineInRange("Mig_15_cannon_explosion_damage", 10, 1, 10000000);
+
+        builder.comment("The gun explosion radius of MiG-150");
+        MIG_15_GUN_EXPLOSION_RADIUS = builder.defineInRange("Mig_15_cannon_explosion_radius", 4d, 1, 10000000);
 
         builder.pop();
 

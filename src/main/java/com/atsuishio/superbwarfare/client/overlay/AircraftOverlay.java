@@ -4,6 +4,7 @@ import com.atsuishio.superbwarfare.Mod;
 import com.atsuishio.superbwarfare.client.ClickHandler;
 import com.atsuishio.superbwarfare.client.RenderHelper;
 import com.atsuishio.superbwarfare.entity.vehicle.A10Entity;
+import com.atsuishio.superbwarfare.entity.vehicle.F16aEntity;
 import com.atsuishio.superbwarfare.entity.vehicle.base.AircraftEntity;
 import com.atsuishio.superbwarfare.entity.vehicle.base.MobileVehicleEntity;
 import com.atsuishio.superbwarfare.entity.vehicle.base.WeaponVehicleEntity;
@@ -48,6 +49,9 @@ public class AircraftOverlay implements IGuiOverlay {
     private static final ResourceLocation FRAME = Mod.loc("textures/screens/aircraft/frame.png");
     private static final ResourceLocation FRAME_TARGET = Mod.loc("textures/screens/aircraft/frame_target.png");
     private static final ResourceLocation FRAME_LOCK = Mod.loc("textures/screens/aircraft/frame_lock.png");
+    private static final ResourceLocation SIDEWINDERFRAME = Mod.loc("textures/screens/aircraft/sidewinderframe.png");
+    private static final ResourceLocation SIDEWINDERFRAME_TARGET = Mod.loc("textures/screens/aircraft/sidewinderframe_target.png");
+    private static final ResourceLocation SIDEWINDERFRAME_LOCK = Mod.loc("textures/screens/aircraft/sidewinderframe_lock.png");
     private static final ResourceLocation IND_1 = Mod.loc("textures/screens/aircraft/locking_ind1.png");
     private static final ResourceLocation IND_2 = Mod.loc("textures/screens/aircraft/locking_ind2.png");
     private static final ResourceLocation IND_3 = Mod.loc("textures/screens/aircraft/locking_ind3.png");
@@ -289,6 +293,37 @@ public class AircraftOverlay implements IGuiOverlay {
                             RenderHelper.blit(poseStack, FRAME_TARGET, x - 12, y - 12, 0, 0, 24, 24, 24, 24, 1f);
                         } else {
                             RenderHelper.blit(poseStack, FRAME, x - 12, y - 12, 0, 0, 24, 24, 24, 24, 1f);
+                        }
+                        poseStack.popPose();
+                    }
+                }
+            }
+
+            // F-16A的导弹锁定
+            if (mobileVehicle instanceof F16aEntity f16aEntity && f16aEntity.getWeaponIndex(0) == 1) {
+                Entity targetEntity = EntityFindUtil.findEntity(player.level(), f16aEntity.getTargetUuid());
+                List<Entity> entities = SeekTool.IRHlateseekCustomSizeAirEntities(f16aEntity, player.level(), 200, 10, 0.5f);
+
+                for (var e : entities) {
+                    Vec3 pos3 = new Vec3(Mth.lerp(partialTick, e.xo, e.getX()), Mth.lerp(partialTick, e.yo + e.getEyeHeight(), e.getEyeY()), Mth.lerp(partialTick, e.zo, e.getZ()));
+                    Vec3 lookAngle3 = player.getViewVector(partialTick).normalize().scale(pos3.distanceTo(cameraPos) * (1 - 1.0 / zoom));
+                    var cPos3 = cameraPos.add(lookAngle3);
+                    Vec3 point = RenderHelper.worldToScreen(pos3, ClientEventHandler.zoomVehicle ? cPos3 : cameraPos);
+                    if (point != null) {
+                        boolean nearest = e == targetEntity;
+                        boolean lockOn = f16aEntity.locked && nearest;
+
+                        poseStack.pushPose();
+                        float x = (float) point.x;
+                        float y = (float) point.y;
+
+                        if (lockOn) {
+                            RenderHelper.blit(poseStack, SIDEWINDERFRAME_LOCK, x - 12, y - 12, 0, 0, 24, 24, 24, 24, 1f);
+                        } else if (nearest) {
+                            lerpLock = Mth.lerp(partialTick, lerpLock, f16aEntity.lockTime);
+                            RenderHelper.blit(poseStack, SIDEWINDERFRAME_TARGET, x - 12, y - 12, 0, 0, 24, 24, 24, 24, 1f);
+                        } else {
+                            RenderHelper.blit(poseStack, SIDEWINDERFRAME, x - 12, y - 12, 0, 0, 24, 24, 24, 24, 1f);
                         }
                         poseStack.popPose();
                     }

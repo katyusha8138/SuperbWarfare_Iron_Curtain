@@ -49,6 +49,7 @@ public class ContainerBlockItem extends BlockItem implements GeoItem {
         event.add(ModEntities.SPEEDBOAT, true);
         event.add(ModEntities.AH_6);
         event.add(ModEntities.UH_1);
+        event.add(ModEntities.UH_60);
         event.add(ModEntities.LAV_150, true);
         event.add(ModEntities.BMP_2, true);
         event.add(ModEntities.PRISM_TANK);
@@ -65,9 +66,18 @@ public class ContainerBlockItem extends BlockItem implements GeoItem {
         event.add(ModEntities.BTR80);
         event.add(ModEntities.M113);
         event.add(ModEntities.M113A2);
+        event.add(ModEntities.M2);
+        event.add(ModEntities.T54);
+        event.add(ModEntities.T55);
+        event.add(ModEntities.T62);
+        event.add(ModEntities.T64);
+        event.add(ModEntities.T80BV);
         event.add(ModEntities.WHEEL_CHAIR);
         event.add(ModEntities.TOM_6);
         event.add(ModEntities.A_10A);
+        event.add(ModEntities.SU_27);
+        event.add(ModEntities.F_16A);
+        event.add(ModEntities.MIG_15);
     }
 
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);

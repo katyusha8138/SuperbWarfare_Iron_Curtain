@@ -36,6 +36,7 @@ public class ModEntityRenderers {
         event.registerEntityRenderer(ModEntities.WHEEL_CHAIR.get(), WheelChairRenderer::new);
         event.registerEntityRenderer(ModEntities.AH_6.get(), Ah6Renderer::new);
         event.registerEntityRenderer(ModEntities.UH_1.get(), Uh1Renderer::new);
+        event.registerEntityRenderer(ModEntities.UH_60.get(), Uh60Renderer::new);
         event.registerEntityRenderer(ModEntities.FLARE_DECOY.get(), FlareDecoyEntityRenderer::new);
         event.registerEntityRenderer(ModEntities.SMOKE_DECOY.get(), SmokeDecoyEntityRenderer::new);
         event.registerEntityRenderer(ModEntities.LAV_150.get(), Lav150Renderer::new);
@@ -58,12 +59,22 @@ public class ModEntityRenderers {
         event.registerEntityRenderer(ModEntities.BTR80.get(), Btr80Renderer::new);
         event.registerEntityRenderer(ModEntities.M113.get(), M113Renderer::new);
         event.registerEntityRenderer(ModEntities.M113A2.get(), M113a2Renderer::new);
+        event.registerEntityRenderer(ModEntities.M2.get(), M2Renderer::new);
+        event.registerEntityRenderer(ModEntities.T54.get(), T54Renderer::new);
+        event.registerEntityRenderer(ModEntities.T55.get(), T55Renderer::new);
+        event.registerEntityRenderer(ModEntities.T62.get(), T62Renderer::new);
+        event.registerEntityRenderer(ModEntities.T64.get(), T64Renderer::new);
+        event.registerEntityRenderer(ModEntities.T80BV.get(), T80bvRenderer::new);
         event.registerEntityRenderer(ModEntities.WATER_MASK.get(), WaterMaskEntityRenderer::new);
         event.registerEntityRenderer(ModEntities.PRISM_TANK.get(), PrismTankRenderer::new);
         event.registerEntityRenderer(ModEntities.SWARM_DRONE.get(), SwarmDroneRenderer::new);
         event.registerEntityRenderer(ModEntities.HPJ_11.get(), Hpj11Renderer::new);
         event.registerEntityRenderer(ModEntities.A_10A.get(), A10Renderer::new);
+        event.registerEntityRenderer(ModEntities.SU_27.get(), Su27Renderer::new);
+        event.registerEntityRenderer(ModEntities.F_16A.get(), F16aRenderer::new);
+        event.registerEntityRenderer(ModEntities.MIG_15.get(), Mig15Renderer::new);
         event.registerEntityRenderer(ModEntities.MK_82.get(), Mk82Renderer::new);
         event.registerEntityRenderer(ModEntities.AGM_65.get(), Agm65Renderer::new);
+        event.registerEntityRenderer(ModEntities.AIM_9L.get(), Aim9lRenderer::new);
     }
 }

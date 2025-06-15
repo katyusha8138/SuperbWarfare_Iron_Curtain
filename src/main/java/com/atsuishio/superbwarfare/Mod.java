@@ -2,6 +2,8 @@ package com.atsuishio.superbwarfare;
 
 import com.atsuishio.superbwarfare.api.event.RegisterContainersEvent;
 import com.atsuishio.superbwarfare.client.MouseMovementHandler;
+import com.atsuishio.superbwarfare.KeyBindings;
+import com.atsuishio.superbwarfare.client.overlay.RadarOverlay;
 import com.atsuishio.superbwarfare.compat.tacz.TACZGunEventHandler;
 import com.atsuishio.superbwarfare.config.ClientConfig;
 import com.atsuishio.superbwarfare.config.CommonConfig;
@@ -17,6 +19,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionUtils;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
 import net.minecraftforge.event.TickEvent;
@@ -28,6 +31,7 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.fml.loading.FMLEnvironment;
 import net.minecraftforge.network.NetworkDirection;
 import net.minecraftforge.network.NetworkEvent;
 import net.minecraftforge.network.NetworkRegistry;
@@ -50,6 +54,7 @@ public class Mod {
     public static final Logger LOGGER = LogManager.getLogger(Mod.class);
 
     public Mod() {
+
         ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, ClientConfig.init());
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, CommonConfig.init());
         ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, ServerConfig.init());
@@ -199,7 +204,9 @@ public class Mod {
         FMLJavaModLoadingContext.get().getModEventBus().post(registerContainerEvent);
     }
 
+
     public void onClientSetup(final FMLClientSetupEvent event) {
         MouseMovementHandler.init();
+        KeyBindings.register();
     }
 }

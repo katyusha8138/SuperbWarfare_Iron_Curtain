@@ -3146,10 +3146,35 @@
       }
     ]
   },
+  "radar_lock": {
+    "category": "player",
+    "sounds": [
+      {
+        "name": "superbwarfare:radar_lock",
+        "stream": false
+      }
+    ]
+  },
   "jet_lockon": {
     "sounds": [
       {
         "name": "superbwarfare:a10/jet_lockon",
+        "stream": false
+      }
+    ]
+  },
+  "sidewinderlock": {
+    "sounds": [
+      {
+        "name": "superbwarfare:f16/sidewinderlock",
+        "stream": false
+      }
+    ]
+  },
+  "sidewinderlockon": {
+    "sounds": [
+      {
+        "name": "superbwarfare:f16/sidewinderlockon",
         "stream": false
       }
     ]

@@ -461,6 +461,9 @@ public class ModSounds {
     public static final RegistryObject<SoundEvent> MISSILE_START = REGISTRY.register("missile_start", () -> SoundEvent.createVariableRangeEvent(Mod.loc("missile_start")));
     public static final RegistryObject<SoundEvent> JET_LOCK = REGISTRY.register("jet_lock", () -> SoundEvent.createVariableRangeEvent(Mod.loc("jet_lock")));
     public static final RegistryObject<SoundEvent> JET_LOCKON = REGISTRY.register("jet_lockon", () -> SoundEvent.createVariableRangeEvent(Mod.loc("jet_lockon")));
+    public static final RegistryObject<SoundEvent> SIDEWINDERLOCK = REGISTRY.register("sidewinderlock", () -> SoundEvent.createVariableRangeEvent(Mod.loc("sidewinderlock")));
+    public static final RegistryObject<SoundEvent> SIDEWINDERLOCKON = REGISTRY.register("sidewinderlockon", () -> SoundEvent.createVariableRangeEvent(Mod.loc("sidewinderlockon")));
+    public static final RegistryObject<SoundEvent> RADAR_LOCK = REGISTRY.register("radar_lock", () -> SoundEvent.createVariableRangeEvent(Mod.loc("radar_lock")));
 
     public static final RegistryObject<SoundEvent> DPS_GENERATOR_EVOLVE = REGISTRY.register("dps_generator_evolve", () -> SoundEvent.createVariableRangeEvent(Mod.loc("dps_generator_evolve")));
 }

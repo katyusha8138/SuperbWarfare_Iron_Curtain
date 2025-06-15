@@ -37,6 +37,10 @@ public class ExplosionConfig {
     public static ForgeConfigSpec.IntValue AGM_65_EXPLOSION_DAMAGE;
     public static ForgeConfigSpec.DoubleValue AGM_65_EXPLOSION_RADIUS;
 
+    public static ForgeConfigSpec.IntValue AIM_9_DAMAGE;
+    public static ForgeConfigSpec.IntValue AIM_9_EXPLOSION_DAMAGE;
+    public static ForgeConfigSpec.DoubleValue AIM_9_EXPLOSION_RADIUS;
+
     public static ForgeConfigSpec.IntValue MK_82_EXPLOSION_DAMAGE;
     public static ForgeConfigSpec.DoubleValue MK_82_EXPLOSION_RADIUS;
 
@@ -147,6 +151,19 @@ public class ExplosionConfig {
 
         builder.comment("The explosion radius of AGM-65");
         AGM_65_EXPLOSION_RADIUS = builder.defineInRange("agm_65_explosion_radius", 9d, 1, Integer.MAX_VALUE);
+
+        builder.pop();
+
+        builder.push("AIM-9");
+
+        builder.comment("The damage of AIM-9");
+        AIM_9_DAMAGE = builder.defineInRange("aim_9_damage", 500, 1, Integer.MAX_VALUE);
+
+        builder.comment("The explosion damage of AIM-9");
+        AIM_9_EXPLOSION_DAMAGE = builder.defineInRange("aim_9_explosion_damage", 100, 1, Integer.MAX_VALUE);
+
+        builder.comment("The explosion radius of AIM-9");
+        AIM_9_EXPLOSION_RADIUS = builder.defineInRange("aim_9_explosion_radius", 9d, 1, Integer.MAX_VALUE);
 
         builder.pop();
 

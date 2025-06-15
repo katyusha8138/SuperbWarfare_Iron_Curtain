@@ -10,6 +10,10 @@ import com.atsuishio.superbwarfare.entity.projectile.SwarmDroneEntity;
 import com.atsuishio.superbwarfare.entity.vehicle.base.MobileVehicleEntity;
 import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import net.minecraft.core.BlockPos;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.AreaEffectCloud;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.ExperienceOrb;
@@ -27,6 +31,7 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.registries.ForgeRegistries;
+
 
 import java.util.Comparator;
 import java.util.List;
@@ -82,6 +87,39 @@ public class SeekTool {
                 }).min(Comparator.comparingDouble(e -> calculateAngle(e, entity))).orElse(null);
     }
 
+    private static final TagKey<EntityType<?>> IRH_LATE_LOCKABLETARGET = TagKey.create(
+            Registries.ENTITY_TYPE,
+            new ResourceLocation("superbwarfare", "irh_late_lockabletarget")
+    );
+
+    public static boolean isAboveGroundHeight(Entity entity, double threshold) {
+        BlockPos below = BlockPos.containing(entity.getX(), entity.getY() - 0.1, entity.getZ());
+        Level level = entity.level();
+        int groundY = level.getHeight(net.minecraft.world.level.levelgen.Heightmap.Types.MOTION_BLOCKING, below.getX(), below.getZ());
+        double heightAboveGround = entity.getY() - groundY;
+        return heightAboveGround >= threshold;
+    }
+
+    public static Entity IRHlateseekCustomSizeAirEntity(Entity entity, Level level, double seekRange, double seekAngle ,double size) {
+        return StreamSupport.stream(EntityFindUtil.getEntities(level).getAll().spliterator(), false)
+                .filter(e -> {
+                    if (e.distanceTo(entity) <= seekRange && calculateAngle(e, entity) < seekAngle &&
+                            e != entity &&
+                                    e.distanceTo(entity) <= seekRange &&
+                                    e.getBoundingBox().getSize() >= size &&
+                                    baseFilter(e) &&
+                                    smokeFilter(e) &&
+                                    isAboveGroundHeight(e, 3.0) &&
+                                    e.getVehicle() == null
+
+                    ) {
+                        return level.clip(new ClipContext(entity.getEyePosition(), e.getEyePosition(),
+                                ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity)).getType() != HitResult.Type.BLOCK;
+                    }
+                    return false;
+                }).min(Comparator.comparingDouble(e -> calculateAngle(e, entity))).orElse(null);
+    }
+
     public static Entity seekLivingEntity(Entity entity, Level level, double seekRange, double seekAngle) {
         return StreamSupport.stream(EntityFindUtil.getEntities(level).getAll().spliterator(), false)
                 .filter(e -> {
@@ -125,6 +163,24 @@ public class SeekTool {
                             && (!checkOnGround || isOnGround(e, 10))
                             && smokeFilter(e)
                             && e.getVehicle() == null
+                            && (!e.isAlliedTo(entity) || e.getTeam() == null || e.getTeam().getName().equals("TDM"))) {
+                        return level.clip(new ClipContext(entity.getEyePosition(), e.getEyePosition(),
+                                ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity)).getType() != HitResult.Type.BLOCK;
+                    }
+                    return false;
+                }).toList();
+    }
+
+    public static List<Entity> IRHlateseekCustomSizeAirEntities(Entity entity, Level level, double seekRange, double seekAngle, double size) {
+        return StreamSupport.stream(EntityFindUtil.getEntities(level).getAll().spliterator(), false)
+                .filter(e -> {
+                    if (e.distanceTo(entity) <= seekRange && calculateAngle(e, entity) < seekAngle
+                            && e != entity
+                            && e.getBoundingBox().getSize() >= size
+                            && baseFilter(e)
+                            && smokeFilter(e)
+                            && e.getVehicle() == null
+                            && isAboveGroundHeight(e, 3.0)
                             && (!e.isAlliedTo(entity) || e.getTeam() == null || e.getTeam().getName().equals("TDM"))) {
                         return level.clip(new ClipContext(entity.getEyePosition(), e.getEyePosition(),
                                 ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity)).getType() != HitResult.Type.BLOCK;
