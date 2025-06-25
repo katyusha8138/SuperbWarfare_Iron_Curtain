@@ -12,6 +12,7 @@ public class ModEntityRenderers {
     @SubscribeEvent
     public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(ModEntities.MORTAR.get(), MortarRenderer::new);
+        event.registerEntityRenderer(ModEntities.ARTILLERY.get(), ArtilleryRenderer::new);
         event.registerEntityRenderer(ModEntities.SENPAI.get(), SenpaiRenderer::new);
         event.registerEntityRenderer(ModEntities.CLAYMORE.get(), ClaymoreRenderer::new);
         event.registerEntityRenderer(ModEntities.C_4.get(), C4Renderer::new);
@@ -72,6 +73,7 @@ public class ModEntityRenderers {
         event.registerEntityRenderer(ModEntities.A_10A.get(), A10Renderer::new);
         event.registerEntityRenderer(ModEntities.SU_27.get(), Su27Renderer::new);
         event.registerEntityRenderer(ModEntities.F_16A.get(), F16aRenderer::new);
+        event.registerEntityRenderer(ModEntities.F_16C.get(), F16cRenderer::new);
         event.registerEntityRenderer(ModEntities.MIG_15.get(), Mig15Renderer::new);
         event.registerEntityRenderer(ModEntities.MK_82.get(), Mk82Renderer::new);
         event.registerEntityRenderer(ModEntities.AGM_65.get(), Agm65Renderer::new);

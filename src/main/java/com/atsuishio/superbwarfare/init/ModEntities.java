@@ -33,6 +33,8 @@ public class ModEntities {
     // Misc Entities
     public static final RegistryObject<EntityType<MortarEntity>> MORTAR = register("mortar",
             EntityType.Builder.<MortarEntity>of(MortarEntity::new, MobCategory.MISC).setTrackingRange(64).setUpdateInterval(1).setCustomClientFactory(MortarEntity::new).fireImmune().sized(0.8f, 1.4f));
+    public static final RegistryObject<EntityType<ArtilleryEntity>> ARTILLERY = register("artillery",
+            EntityType.Builder.<ArtilleryEntity>of(ArtilleryEntity::new, MobCategory.MISC).setTrackingRange(64).setUpdateInterval(1).setCustomClientFactory(ArtilleryEntity::new).fireImmune().sized(2f, 4f));
     public static final RegistryObject<EntityType<LaserEntity>> LASER = register("laser",
             EntityType.Builder.<LaserEntity>of(LaserEntity::new, MobCategory.MISC).sized(0.1f, 0.1f).fireImmune().setUpdateInterval(1));
     public static final RegistryObject<EntityType<FlareDecoyEntity>> FLARE_DECOY = register("flare_decoy",

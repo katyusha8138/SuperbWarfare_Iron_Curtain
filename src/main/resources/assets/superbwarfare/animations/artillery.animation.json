@@ -1,0 +1,152 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.artillery.idle": {
+			"loop": true,
+			"bones": {
+				"shell": {
+					"scale": {
+						"vector": [0, 0, 0]
+					}
+				},
+				"gunpowder": {
+					"scale": {
+						"vector": [0, 0, 0]
+					}
+				}
+			}
+		},
+		"animation.artillery.fire": {
+			"animation_length": 10.5,
+			"bones": {
+				"barrel": {
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"10.0": {
+							"vector": [0, 0, 0]
+						},
+						"10.0833": {
+							"vector": [0, 0, 4]
+						},
+						"10.5": {
+							"vector": [0, 0, 0],
+							"easing": "easeOutSine"
+						}
+					}
+				},
+				"shell": {
+					"position": {
+						"1.0": {
+							"vector": [0, -4, 3]
+						},
+						"1.5": {
+							"vector": [0, -4, 3]
+						},
+						"2.125": {
+							"vector": [0, 0, 3],
+							"easing": "easeInElastic"
+						},
+						"2.4583": {
+							"vector": [0, 0, 3],
+							"easing": "linear"
+						},
+						"5.0": {
+							"vector": [0, 0, -26],
+							"easing": "easeInElastic"
+						},
+						"6.625": {
+							"vector": [0, 0, -26]
+						},
+						"7.9167": {
+							"vector": [0, 0, -36],
+							"easing": "easeInElastic",
+							"easingArgs": [0.5]
+						}
+					},
+					"scale": {
+						"1.0": {
+							"vector": [0, 0, 0]
+						},
+						"1.2083": {
+							"vector": [1, 1, 1],
+							"easing": "easeInSine"
+						},
+						"1.3333": {
+							"vector": [0.8, 0.8, 0.8],
+							"easing": "easeInOutSine"
+						},
+						"1.4167": {
+							"vector": [1, 1, 1],
+							"easing": "easeInOutSine"
+						}
+					}
+				},
+				"hatch": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.125": {
+							"vector": [0, 0, 0]
+						},
+						"0.7083": {
+							"vector": [-90, 0, 0],
+							"easing": "linear"
+						},
+						"8.7917": {
+							"vector": [-90, 0, 0]
+						},
+						"9.4167": {
+							"vector": [0, 0, 0],
+							"easing": "easeInSine"
+						}
+					}
+				},
+				"gunpowder": {
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"5.25": {
+							"vector": [0, -4, 4]
+						},
+						"5.625": {
+							"vector": [0, -4, 4]
+						},
+						"6.1667": {
+							"vector": [0, 0.25, 4]
+						},
+						"7.9583": {
+							"vector": [0, 0.25, -24],
+							"easing": "easeInElastic",
+							"easingArgs": [0.5]
+						}
+					},
+					"scale": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"5.25": {
+							"vector": [0, 0, 0]
+						},
+						"5.5417": {
+							"vector": [1, 1, 1],
+							"easing": "easeInSine"
+						},
+						"5.6667": {
+							"vector": [0.8, 0.8, 0.8],
+							"easing": "easeInSine"
+						},
+						"5.75": {
+							"vector": [1, 1, 1],
+							"easing": "easeInSine"
+						}
+					}
+				}
+			}
+		}
+	},
+	"geckolib_format_version": 2
+}

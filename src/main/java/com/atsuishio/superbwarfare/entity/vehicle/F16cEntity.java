@@ -1,9 +1,6 @@
 package com.atsuishio.superbwarfare.entity.vehicle;
 
-import com.atsuishio.superbwarfare.AirRadarSystem;
-import com.atsuishio.superbwarfare.KeyBindings;
-import com.atsuishio.superbwarfare.RadarTarget;
-import com.atsuishio.superbwarfare.AirRadarSystem;
+
 import com.atsuishio.superbwarfare.Mod;
 import com.atsuishio.superbwarfare.client.ClientSoundHandler;
 import com.atsuishio.superbwarfare.config.server.ExplosionConfig;
@@ -19,6 +16,7 @@ import com.atsuishio.superbwarfare.entity.vehicle.weapon.VehicleWeapon;
 import com.atsuishio.superbwarfare.init.*;
 import com.atsuishio.superbwarfare.network.message.receive.ShakeClientMessage;
 import com.atsuishio.superbwarfare.tools.*;
+import com.atsuishio.superbwarfare.network.message.S2CRadarSyncPacket;
 import com.mojang.math.Axis;
 import it.unimi.dsi.fastutil.Pair;
 import net.minecraft.core.BlockPos;
@@ -55,6 +53,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.ForgeEventFactory;
 import net.minecraftforge.fml.DistExecutor;
+import net.minecraftforge.network.NetworkDirection;
 import net.minecraftforge.network.PacketDistributor;
 import net.minecraftforge.network.PlayMessages;
 import org.jetbrains.annotations.NotNull;
@@ -68,6 +67,7 @@ import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache
 import software.bernie.geckolib.core.animation.AnimatableManager;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.UUID;
@@ -76,7 +76,7 @@ import static com.atsuishio.superbwarfare.tools.ParticleTool.sendParticle;
 
 public class F16cEntity extends ContainerMobileVehicleEntity implements GeoEntity, WeaponVehicleEntity, AircraftEntity {
 
-    private final AirRadarSystem radar = new AirRadarSystem();
+    public static final int RADAR_RANGE = 150;
     public static final EntityDataAccessor<Integer> LOADED_BOMB = SynchedEntityData.defineId(F16cEntity.class, EntityDataSerializers.INT);
     public static final EntityDataAccessor<Integer> LOADED_AAM = SynchedEntityData.defineId(F16cEntity.class, EntityDataSerializers.INT);
     public static final EntityDataAccessor<Integer> LOADED_MISSILE = SynchedEntityData.defineId(F16cEntity.class, EntityDataSerializers.INT);
@@ -95,7 +95,6 @@ public class F16cEntity extends ContainerMobileVehicleEntity implements GeoEntit
     public float destroyRot;
     public int lockTime;
     public boolean locked;
-    private AirRadarSystem radarSystem;
     private Player currentPilot;
 
     public F16cEntity(PlayMessages.SpawnEntity packet, Level world) {
@@ -106,18 +105,8 @@ public class F16cEntity extends ContainerMobileVehicleEntity implements GeoEntit
     public F16cEntity(EntityType<F16cEntity> type, Level world) {
         super(type, world);
         this.setMaxUpStep(1f);
-        radar.registerTargetType(F16aEntity.class);
-        radar.registerTargetType(F16cEntity.class);
-        radar.registerTargetType(A10Entity.class);
     }
 
-    public boolean isRadarLocked(UUID entityId) {
-        return radar.isRadarLocked(entityId);
-    }
-
-    public AirRadarSystem getRadar() {
-        return radar;
-    }
 
     @Override
     public VehicleWeapon[][] initWeapons() {
@@ -176,6 +165,27 @@ public class F16cEntity extends ContainerMobileVehicleEntity implements GeoEntit
     @Override
     public boolean sendFireStarParticleOnHurt() {
         return false;
+    }
+
+    private void handleRadar() {
+        // この部分は変更なし
+        if (this.level().isClientSide() || !(this.getFirstPassenger() instanceof ServerPlayer player)) {
+            return;
+        }
+
+        List<Vec3> targetPositions = new ArrayList<>();
+
+        // エンティティの検索条件を変更
+        List<Entity> potentialTargets = this.level().getEntities(this, this.getBoundingBox().inflate(RADAR_RANGE),
+                entity -> (entity instanceof AirEntity) && entity != this);
+
+        // この部分も変更なし
+        if (!potentialTargets.isEmpty()) {
+            for (Entity target : potentialTargets) {
+                targetPositions.add(target.position());
+            }
+            com.atsuishio.superbwarfare.Mod.PACKET_HANDLER.sendTo(new S2CRadarSyncPacket(targetPositions), player.connection.connection, NetworkDirection.PLAY_TO_CLIENT);
+        }
     }
 
     @Override
@@ -244,9 +254,11 @@ public class F16cEntity extends ContainerMobileVehicleEntity implements GeoEntit
         this.setDeltaMovement(this.getDeltaMovement().add(this.getViewVector(1).scale((forward ? 0.23 : 0.1) * getDeltaMovement().dot(getViewVector(1)))));
         this.setDeltaMovement(this.getDeltaMovement().multiply(f, f, f));
 
-        if (!level().isClientSide) {
-            radar.update(level(), this.position(), this.getLookAngle(), this.getControllingPassenger() instanceof Player ? (Player)this.getControllingPassenger() : null);
+        if (this.tickCount % 20 == 0) {
+            handleRadar();
+            System.out.println("RADAR TICKED");
         }
+
         if (this.isInWater() && this.tickCount % 4 == 0) {
             this.setDeltaMovement(this.getDeltaMovement().multiply(0.6, 0.6, 0.6));
             if (lastTickSpeed > 0.4) {

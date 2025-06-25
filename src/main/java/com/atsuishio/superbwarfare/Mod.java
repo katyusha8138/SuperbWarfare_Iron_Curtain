@@ -2,14 +2,14 @@ package com.atsuishio.superbwarfare;
 
 import com.atsuishio.superbwarfare.api.event.RegisterContainersEvent;
 import com.atsuishio.superbwarfare.client.MouseMovementHandler;
-import com.atsuishio.superbwarfare.KeyBindings;
-import com.atsuishio.superbwarfare.client.overlay.RadarOverlay;
+import com.atsuishio.superbwarfare.client.RadarHud;
 import com.atsuishio.superbwarfare.compat.tacz.TACZGunEventHandler;
 import com.atsuishio.superbwarfare.config.ClientConfig;
 import com.atsuishio.superbwarfare.config.CommonConfig;
 import com.atsuishio.superbwarfare.config.ServerConfig;
 import com.atsuishio.superbwarfare.init.*;
 import com.atsuishio.superbwarfare.network.ModVariables;
+import com.atsuishio.superbwarfare.network.message.S2CRadarSyncPacket;
 import com.atsuishio.superbwarfare.network.message.receive.*;
 import com.atsuishio.superbwarfare.network.message.send.*;
 import net.minecraft.network.FriendlyByteBuf;
@@ -20,6 +20,7 @@ import net.minecraft.world.item.alchemy.PotionUtils;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.RegisterGuiOverlaysEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
 import net.minecraftforge.event.TickEvent;
@@ -86,6 +87,12 @@ public class Mod {
         }
 
         MinecraftForge.EVENT_BUS.register(this);
+    }
+
+    @SubscribeEvent
+    public static void registerGuiOverlays(RegisterGuiOverlaysEvent event) {
+        // Регистрируем наш радар под ID "radar" и указываем, что он должен рисоваться поверх всего
+        event.registerAboveAll("radar", RadarHud.HUD_RADAR);
     }
 
     public static ResourceLocation loc(String path) {
@@ -158,6 +165,7 @@ public class Mod {
         addNetworkMessage(SensitivityMessage.class, SensitivityMessage::encode, SensitivityMessage::decode, SensitivityMessage::handler);
         addNetworkMessage(AdjustZoomFovMessage.class, AdjustZoomFovMessage::encode, AdjustZoomFovMessage::decode, AdjustZoomFovMessage::handler);
         addNetworkMessage(AdjustMortarAngleMessage.class, AdjustMortarAngleMessage::encode, AdjustMortarAngleMessage::decode, AdjustMortarAngleMessage::handler);
+        addNetworkMessage(AdjustArtilleryAngleMessage.class, AdjustArtilleryAngleMessage::encode, AdjustArtilleryAngleMessage::decode, AdjustArtilleryAngleMessage::handler);
         addNetworkMessage(InteractMessage.class, InteractMessage::encode, InteractMessage::decode, InteractMessage::handler);
         addNetworkMessage(VehicleMovementMessage.class, VehicleMovementMessage::encode, VehicleMovementMessage::decode, VehicleMovementMessage::handler);
         addNetworkMessage(DroneFireMessage.class, DroneFireMessage::encode, DroneFireMessage::decode, DroneFireMessage::handler);
@@ -207,6 +215,5 @@ public class Mod {
 
     public void onClientSetup(final FMLClientSetupEvent event) {
         MouseMovementHandler.init();
-        KeyBindings.register();
     }
 }

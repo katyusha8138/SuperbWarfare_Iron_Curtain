@@ -488,6 +488,7 @@
   "entity.superbwarfare.a_10a": "A-10 Thunderbolt II",
   "entity.superbwarfare.su_27": "Su-27 Flanker",
   "entity.superbwarfare.f_16a": "F-16A Block10 Fighting Falcon",
+  "entity.superbwarfare.f_16c": "F-16C Block30 Fighting Falcon",
   "entity.superbwarfare.mig_15": "MiG-15",
   "entity.superbwarfare.mk_82": "MK-82 Aerial Bomb",
   "entity.superbwarfare.agm_65": "AGM-65 Maverick",
@@ -570,6 +571,7 @@
   "tips.superbwarfare.mortar.target_pos.depressed_trajectory": "Depressed Trajectory",
   "tips.superbwarfare.mortar.target_pos.lofted_trajectory": "Lofted Trajectory",
   "tips.superbwarfare.mortar.warn": "This mortar cannot aim at this position",
+  "tips.superbwarfare.artillery.warn": "This artillery cannot aim at this position",
 
   "container.superbwarfare.reforging_table": "Gun Reforge Table",
   "container.superbwarfare.charging_station": "Charging Station",

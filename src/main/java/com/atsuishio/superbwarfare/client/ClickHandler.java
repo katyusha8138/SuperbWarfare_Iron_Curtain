@@ -6,6 +6,7 @@ import com.atsuishio.superbwarfare.compat.clothconfig.ClothConfigHelper;
 import com.atsuishio.superbwarfare.config.client.ReloadConfig;
 import com.atsuishio.superbwarfare.data.gun.FireMode;
 import com.atsuishio.superbwarfare.data.gun.GunData;
+import com.atsuishio.superbwarfare.entity.ArtilleryEntity;
 import com.atsuishio.superbwarfare.entity.MortarEntity;
 import com.atsuishio.superbwarfare.entity.vehicle.base.ArmedVehicleEntity;
 import com.atsuishio.superbwarfare.entity.vehicle.base.CannonEntity;
@@ -184,6 +185,11 @@ public class ClickHandler {
         if (looking == null) return;
         if (looking instanceof MortarEntity && player.isShiftKeyDown()) {
             Mod.PACKET_HANDLER.sendToServer(new AdjustMortarAngleMessage(scroll));
+            event.setCanceled(true);
+        }
+
+        if (looking instanceof ArtilleryEntity && player.isShiftKeyDown()) {
+            Mod.PACKET_HANDLER.sendToServer(new AdjustArtilleryAngleMessage(scroll));
             event.setCanceled(true);
         }
     }

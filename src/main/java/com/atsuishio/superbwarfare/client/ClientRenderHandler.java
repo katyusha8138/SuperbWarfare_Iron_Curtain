@@ -62,5 +62,6 @@ public class ClientRenderHandler {
         event.registerBelowAll(HelicopterHudOverlay.ID, new HelicopterHudOverlay());
         event.registerBelowAll(AircraftOverlay.ID, new AircraftOverlay());
         event.registerBelowAll(MortarInfoOverlay.ID, new MortarInfoOverlay());
+        event.registerBelowAll(ArtilleryInfoOverlay.ID, new ArtilleryInfoOverlay());
     }
 }
