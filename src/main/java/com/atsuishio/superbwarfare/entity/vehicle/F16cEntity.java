@@ -19,6 +19,7 @@ import com.atsuishio.superbwarfare.tools.*;
 import com.atsuishio.superbwarfare.network.message.S2CRadarSyncPacket;
 import com.mojang.math.Axis;
 import it.unimi.dsi.fastutil.Pair;
+import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
@@ -95,7 +96,6 @@ public class F16cEntity extends ContainerMobileVehicleEntity implements GeoEntit
     public float destroyRot;
     public int lockTime;
     public boolean locked;
-    private Player currentPilot;
 
     public F16cEntity(PlayMessages.SpawnEntity packet, Level world) {
         this(ModEntities.F_16C.get(), world);

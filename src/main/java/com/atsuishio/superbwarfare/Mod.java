@@ -200,6 +200,7 @@ public class Mod {
         addNetworkMessage(ClientMotionSyncMessage.class, ClientMotionSyncMessage::encode, ClientMotionSyncMessage::decode, ClientMotionSyncMessage::handler, Optional.of(NetworkDirection.PLAY_TO_CLIENT));
         addNetworkMessage(TacticalSprintMessage.class, TacticalSprintMessage::encode, TacticalSprintMessage::decode, TacticalSprintMessage::handler);
         addNetworkMessage(ClientTacticalSprintSyncMessage.class, ClientTacticalSprintSyncMessage::encode, ClientTacticalSprintSyncMessage::decode, ClientTacticalSprintSyncMessage::handler, Optional.of(NetworkDirection.PLAY_TO_CLIENT));
+        addNetworkMessage(S2CRadarSyncPacket.class, S2CRadarSyncPacket::buffer, S2CRadarSyncPacket::new, S2CRadarSyncPacket::handler);
 
         event.enqueueWork(() -> BrewingRecipeRegistry.addRecipe(Ingredient.of(PotionUtils.setPotion(new ItemStack(Items.POTION), Potions.WATER)),
                 Ingredient.of(Items.LIGHTNING_ROD), PotionUtils.setPotion(new ItemStack(Items.POTION), ModPotion.SHOCK.get())));
@@ -215,5 +216,5 @@ public class Mod {
 
     public void onClientSetup(final FMLClientSetupEvent event) {
         MouseMovementHandler.init();
-    }
+        }
 }

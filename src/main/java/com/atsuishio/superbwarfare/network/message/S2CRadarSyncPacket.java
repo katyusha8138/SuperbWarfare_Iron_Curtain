@@ -1,6 +1,5 @@
 package com.atsuishio.superbwarfare.network.message;
 
-import com.atsuishio.superbwarfare.network.message.send.ChangeVehicleSeatMessage;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.network.NetworkEvent;

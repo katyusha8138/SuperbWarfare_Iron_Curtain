@@ -2,6 +2,8 @@ package com.atsuishio.superbwarfare.client;
 
 import com.atsuishio.superbwarfare.entity.vehicle.F16aEntity;
 import com.atsuishio.superbwarfare.entity.vehicle.F16cEntity;
+import com.atsuishio.superbwarfare.entity.vehicle.base.AirEntity;
+import com.atsuishio.superbwarfare.entity.vehicle.base.AircraftEntity;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
@@ -21,20 +23,20 @@ public class RadarHud {
 
     private static final ResourceLocation RADAR_BACKGROUND = Mod.loc("textures/gui/radar_bg.png");
     private static final ResourceLocation RADAR_TARGET = Mod.loc("textures/gui/radar_target.png");
-    private static final ResourceLocation RADAR_SWEEP = Mod.loc("textures/gui/radar_sweep.png"); // Текстура 1x47
-    
+    private static final ResourceLocation RADAR_SWEEP = Mod.loc("textures/gui/radar_sweep.png"); // 1x47テクスチャ
+
     private static final List<String> AIRPLANES = Arrays.asList(
         "F16cEntity"
     );
-    
+
     // レーダー捜索変数
     private static float sweepAngle = 0.0f;
-    private static final float SWEEP_SPEED = 1.0f; // Увеличенная скорость вращения развертки
-    private static final int TRAIL_LENGTH = 3; // Только 3 сегмента шлейфа
-    
+    private static final float SWEEP_SPEED = 1.3f; // 走査速度
+    private static final int TRAIL_LENGTH = 3; // 3つのループ・セグメントのみ
+
     // 検知継続時間
     private static final Map<Vec3, Long> targetDetectionTime = new HashMap<>();
-    private static final long TARGET_VISIBILITY_TIME = 1000; 
+    private static final long TARGET_VISIBILITY_TIME = 1000;
     private static final long FADE_TIME = 1000;
 
     public static final IGuiOverlay HUD_RADAR = (gui, guiGraphics, partialTick, screenWidth, screenHeight) -> {
@@ -47,7 +49,15 @@ public class RadarHud {
 
         Entity vehicle = player.getVehicle();
 
+        if (vehicle != null) {
+            System.out.println("[DEBUG] vehicle = " + vehicle);
+            System.out.println("[DEBUG] vehicle class = " + vehicle.getClass().getName());
+        } else {
+            System.out.println("[DEBUG] vehicle = null");
+        }
+
         if (vehicle != null && isRadarAirplane(vehicle)) {
+            guiGraphics.drawString(Minecraft.getInstance().font, "Radar Active", 10, 100, 0xFFFFFF);
             int radarSize = 96;
             int radarX = 10;
             int radarY = 10;
@@ -64,47 +74,47 @@ public class RadarHud {
 
             // 走査角の更新
             sweepAngle = (sweepAngle + SWEEP_SPEED * partialTick) % 360;
-            
+
             // 現在の行列を保存
             PoseStack poseStack = guiGraphics.pose();
             poseStack.pushPose();
-            
+
             // レーダー画面の中心
             poseStack.translate(radarCenterX, radarCenterY, 0);
-            
+
             // 走査線を描画（透明度の異なる3つのセグメント）
             for (int i = TRAIL_LENGTH - 1; i >= 0; i--) {
                 float trailAngle = sweepAngle - (i * 20); // 各セグメントは20°遅れる
                 float alpha = 0.15f - (i * 0.05f); // 透明度の低下：0.15、0.10、0.05
-                
+
                 poseStack.pushPose();
                 poseStack.mulPose(Axis.ZP.rotationDegrees(trailAngle));
-                
+
                 RenderSystem.setShaderColor(0.0f, 1.0f, 0.0f, alpha);
                 guiGraphics.blit(RADAR_SWEEP, -1, -47, 0, 0, 1, 47, 1, 47);
-                
+
                 poseStack.popPose();
             }
-            
+
             // 主走査線を描画
             poseStack.pushPose();
             poseStack.mulPose(Axis.ZP.rotationDegrees(sweepAngle));
-            
+
             RenderSystem.setShaderColor(0.0f, 1.0f, 0.0f, 0.7f);
             guiGraphics.blit(RADAR_SWEEP, -1, -47, 0, 0, 1, 47, 1, 47);
-            
+
             poseStack.popPose();
-            
+
             // マトリックスの修復
             poseStack.popPose();
-            
+
             RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
 
             // 現在時刻
             long currentTime = System.currentTimeMillis();
-            
+
             // 古いターゲットをクリア
-            targetDetectionTime.entrySet().removeIf(entry -> 
+            targetDetectionTime.entrySet().removeIf(entry ->
                 currentTime - entry.getValue() > TARGET_VISIBILITY_TIME + FADE_TIME);
 
             // ターゲットを描画
@@ -129,23 +139,23 @@ public class RadarHud {
                 // リーマーとターゲットの角度をチェックする
                 float targetAngle = (float) (Math.toDegrees(rotatedAngle) + 90) % 360;
                 float angleDiff = Math.abs(normalizeAngle(targetAngle - sweepAngle));
-                
+
                 // 走査がターゲットを通過した場合、検出時間を参照する
                 if (angleDiff < 5 && !targetDetectionTime.containsKey(targetPos)) {
                     targetDetectionTime.put(targetPos, currentTime);
                 }
-                
+
                 // ターゲットが検出された場合のみ表示
                 if (targetDetectionTime.containsKey(targetPos)) {
                     long detectionTime = targetDetectionTime.get(targetPos);
                     long timeSinceDetection = currentTime - detectionTime;
-                    
+
                     float alpha = 1.0f;
-                    
+
                     if (timeSinceDetection < TARGET_VISIBILITY_TIME) {
                         // ターゲットが完全に検知されている
                         alpha = 1.0f;
-                        
+
                         // 検出後1秒間のリップル効果
                         if (timeSinceDetection < 1000) {
                             float pulse = (float) (Math.sin(timeSinceDetection * 0.01) * 0.3 + 0.7);
@@ -158,19 +168,19 @@ public class RadarHud {
                         // ターゲットが見えなくなる
                         continue;
                     }
-                    
+
                     RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, alpha);
                     // 変更：ターゲットサイズを1.5倍縮小（4x4から3x3へ）
                     int targetSize = 3;
                     guiGraphics.blit(RADAR_TARGET, targetX - (targetSize / 2), targetY - (targetSize / 2), 0, 0, targetSize, targetSize, targetSize, targetSize);
                 }
             }
-            
+
             RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
             RenderSystem.disableBlend();
         }
     };
-    
+
     // 角度を0～180°の範囲に正規化
     private static float normalizeAngle(float angle) {
         angle = angle % 360;
@@ -178,9 +188,8 @@ public class RadarHud {
         if (angle > 180) angle = 360 - angle;
         return angle;
     }
-    
+
     private static boolean isRadarAirplane(Entity vehicle) {
-        String vehicleClassName = vehicle.getClass().getSimpleName();
-        return AIRPLANES.contains(vehicleClassName);
+        return vehicle instanceof F16cEntity;
     }
 }
